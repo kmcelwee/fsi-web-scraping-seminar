@@ -23,7 +23,7 @@ Goal of Seminar 2 (3 hours):
 ## Tools
 
 We will be working exclusively with Google Colab. In order to interact with the 
-Twitter API, we will be using the Python wrapper `tweepy`.
+Twitter API, we will be using the Python wrapper [`tweepy`](https://docs.tweepy.org/en/stable/).
 
 ## Prerequisites
 
