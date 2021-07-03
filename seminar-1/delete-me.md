@@ -47,7 +47,7 @@ they can easily be parsed and created by the software programs we write. We
 
 CSVs are limited because they require one value for each row and each column. 
 If we were trying to add a `Hashtags Used` column, we might get ten or fifteen
-values in each row. If for example, Walmart used the hashtags "#retail", 
+values in each row. If, for example, Walmart used the hashtags "#retail", 
 "#IndependenceDay", and "#savings", we could combine with some kind of unique
 character like a semicolon: `retail;IndependenceDay;savings`. Or we could
 use JSON...
@@ -57,12 +57,12 @@ use JSON...
 Whenever scraping the web, you will inevitably get a JSON (often pronounced
 like Jason) response. It's arguably the most popular data format on the web.
 JSON stands for "JavaScript Object Notation", but you really don't need to 
-remember this up. It's a combination of nested lists and dictionaries, the same
+remember this. It's a combination of nested lists and dictionaries, the same
 kind of lists and dictionaries that you'd use in python.
 
 Here's an example tweet returned from Twitter:
-<details>
-<summary>
+<detail>
+<summary> Toggle to view JSON file</summary>
 ```JSON
 {
   "created_at": "Mon Jul 27 19:00:10 +0000 2020",
@@ -82,7 +82,7 @@ Here's an example tweet returned from Twitter:
           66,
           70
         ]
-      },</summary>
+      },
       {
         "text": "WorldHepatitisDay",
         "indices": [
@@ -300,8 +300,8 @@ Here's an example tweet returned from Twitter:
   "lang": "en"
 }
 ```
-</details>
-
+</detail>
+<summary> Toggle to view JSON file</summary>
 
 As you can see, there's *a lot* of information for just a single tweet, and 
 representing that information in a CSV would be nearly impossible. JSON makes it
