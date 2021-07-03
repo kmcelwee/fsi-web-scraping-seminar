@@ -63,7 +63,8 @@ kind of lists and dictionaries that you'd use in python.
 Here's an example tweet returned from Twitter:
 <details>
 <summary>Toggle to view JSON file</summary>
-```JSON
+
+```
 {
   "created_at": "Mon Jul 27 19:00:10 +0000 2020",
   "id": 1287825123974750208,
@@ -301,7 +302,6 @@ Here's an example tweet returned from Twitter:
 }
 ```
 </details>
-<summary> Toggle to view JSON file</summary>
 
 As you can see, there's *a lot* of information for just a single tweet, and 
 representing that information in a CSV would be nearly impossible. JSON makes it
