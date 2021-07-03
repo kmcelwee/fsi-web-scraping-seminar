@@ -1,6 +1,8 @@
 # Introduction to Colab
 
+<details><summary>View gist</summary>
 <script src="https://gist.github.com/kmcelwee/e981cd23d8005fdcfb18f3d115974d4b.js"></script>
+</details>
 
 Google Colab is an online platform to write computer code. Typically programmers
 write code in files on their computers and then run those programs on their own 
@@ -17,7 +19,7 @@ basics if you're interested. (This site was built with markdown!)
 
 ## Executing your first code block
 
-1. Go to https://colab.research.google.com, you should be greeted with an 
+1. Go to the [Colab website](https://colab.research.google.com), you should be greeted with an 
 introductory notebook. (This has some pretty complicated stuff, so don't get
 too worried about everything that's written there.)
 2. Edit any code block and click the "play" button on the left side. A useful
@@ -35,8 +37,7 @@ print('Welcome to Colab!')
 
 Let's say we are interested in the Twitter account [@dog_feelings](https://twitter.com/dog_feelings/),
 and we want to know what day of the week the account tweets most frequently.
-I already have a CSV of the account's tweets prepared: 
-https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/dog_feelings-tweets.csv
+I already have a CSV of the account's tweets prepared ([link](https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/dog_feelings-tweets.csv)).
 
 Create a markdown cell with the heading "Analyze Twitter account 
 [@dog_feelings](https://twitter.com/dog_feelings/)".
