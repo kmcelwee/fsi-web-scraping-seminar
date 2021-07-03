@@ -322,7 +322,7 @@ with open(json_file_path) as f:
 
 ```
 
-Feel free to copy the following code into a Colab notebook and mess around with the `tweet`
+Feel free to copy the following into a Colab notebook and mess around with the `tweet`
 variable. Here are some examples of getting certain values:
 
 ```python
@@ -343,8 +343,9 @@ some trial and error is predictable.
 **Exercise: Can you make a list of the hashtags?** 
 <details>
     <summary>Toggle to see answer</summary>
-
-```python
+<div class="language-python">
+<pre>
+    <code>
 import json
 import requests
 
@@ -355,7 +356,9 @@ for hashtag in tweet['entities']['hashtags']:
   hashtag_list.append(hashtag['text'])
 
 print(hashtag_list)
-```
+    </code>
+</pre>
+</div>
 </details>
 
 
