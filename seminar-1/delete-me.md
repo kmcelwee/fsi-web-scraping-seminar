@@ -61,7 +61,8 @@ remember this up. It's a combination of nested lists and dictionaries, the same
 kind of lists and dictionaries that you'd use in python.
 
 Here's an example tweet returned from Twitter:
-
+<details>
+<summary>
 ```JSON
 {
   "created_at": "Mon Jul 27 19:00:10 +0000 2020",
@@ -81,7 +82,7 @@ Here's an example tweet returned from Twitter:
           66,
           70
         ]
-      },
+      },</summary>
       {
         "text": "WorldHepatitisDay",
         "indices": [
@@ -299,6 +300,8 @@ Here's an example tweet returned from Twitter:
   "lang": "en"
 }
 ```
+</details>
+
 
 As you can see, there's *a lot* of information for just a single tweet, and 
 representing that information in a CSV would be nearly impossible. JSON makes it
