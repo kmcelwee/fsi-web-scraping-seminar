@@ -1,29 +1,26 @@
 # Introduction to Colab
 
-<details><summary>View gist</summary>
-<script src="https://gist.github.com/kmcelwee/e981cd23d8005fdcfb18f3d115974d4b.js"></script>
-</details>
+Google Colab is an online platform to write computer code in what's called a 
+code "notebook". Notebooks allow programmers to combine charts, text, and code
+in one place. Typically, programmers write code in files on their computers
+and then run those programs on their own computer, but that requires some setup
+that can make things complicated. Similar to a Google Doc, Colab allows you to
+edit code right in the browser.
 
-Google Colab is an online platform to write computer code. Typically programmers
-write code in files on their computers and then run those programs on their own 
-computer, but that requires some setup that can make things complicated. Similar
-to a Google Doc, Colab allows you to edit code right in the browser.
-
-Colab notebooks combine code and text like you'd find in a Google Doc. To add text
-to your notebook, you'd be using a language called "markdown". Markdown is a
-popular syntax used to add formatting like bold style or links to plain text.
+To add text to your notebook, you'd be using a language called "markdown". Markdown is a
+popular syntax used to add formatting to plain text like bolding a word or adding links.
 You don't need to know too much about markdown, but it's nice to know the
-basics if you're interested. (This site was built with markdown!)
+basics if you're interested. (This site was built using just markdown!)
 * [Learn more about markdown.](https://www.markdownguide.org/getting-started/)
 * [Learn more about markdown syntax.](https://www.markdownguide.org/basic-syntax/)
 
 ## Executing your first code block
 
 1. Go to the [Colab website](https://colab.research.google.com), you should be greeted with an 
-introductory notebook. (This has some pretty complicated stuff, so don't get
+introductory notebook. (This intro notebook has some pretty complicated stuff, so don't get
 too worried about everything that's written there.)
 2. Edit any code block and click the "play" button on the left side. A useful
-shortcut to remember is <kbd>Shift</kbd><kbd>Enter</kbd>. This will execute 
+shortcut to remember is <kbd>Shift</kbd> + <kbd>Enter</kbd>. This will execute 
 whatever code block you're currently editing.
 3. Create a new notebook. `File > New Notebook`
 4. In the upper left-hand corner, rename the notebook to "first-notebook.ipynb"
@@ -53,8 +50,7 @@ Create a new code block (`+ Code` button), copy the following code block,
  what this code does!
 
 ```python
-# Research question: What is the most popular day of week for @dog_feelings to
-#  tweet?
+# Research question: What is the most popular day of week for @dog_feelings to tweet?
 
 # import a library that helps us parse CSV files
 import pandas as pd
@@ -76,11 +72,18 @@ df.groupby('day-of-week')['id'].count().plot(kind='bar', title='Number of tweets
 # Note: 0 is Monday and 6 is Sunday
 ```
 
+Expected output:
+
+![](img/colab-output.png)
+
 Again, you don't understand every component here, but the benefit of Colab is 
 that you can combine your notes, charts, and code all in one place.
 
-**EXERCISE: Given the chart created by the code above, what are some initial takeaways?**
-
+**EXERCISES:**
+1. Given the chart created by the code above, what is the answer to our research question?
+2. What are some questions that come up from this chart? How might it be improved?
+3. The header of the CSV is `timestamp,id,text,favorite_count,retweet_count,hashtags`. What 
+    other questions could we answer using this data?
 
 ## Other helpful hints
 
@@ -92,11 +95,11 @@ execute the first cell before executing the second.
 
 * By hovering over many of the buttons, you'll see keyboard shortcuts that are 
 useful to remember and will save you a bit of time. Here are some worth remembering:
-    * <kbd>Shift</kbd><kbd>Enter</kbd>: Execute the code in this cell
-    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>B</kbd>: Create a cell below this cell
-    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>A</kbd>: Create a cell above this cell
-    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>D</kbd>: Delete this cell
-    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>Z</kbd>: Undo
+    * <kbd>Shift</kbd> + <kbd>Enter</kbd>: Execute the code in this cell
+    * <kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>B</kbd>: Create a cell below this cell
+    * <kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>A</kbd>: Create a cell above this cell
+    * <kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>D</kbd>: Delete this cell
+    * <kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>Z</kbd>: Undo
 
 * Don't forget to turn on ["Corgi Mode"](https://twitter.com/GoogleColab/status/1116487177364365313)
 
