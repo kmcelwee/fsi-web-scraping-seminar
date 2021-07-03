@@ -63,8 +63,9 @@ kind of lists and dictionaries that you'd use in python.
 Here's an example tweet returned from Twitter:
 <details>
 <summary>Toggle to view JSON file</summary>
+<pre>
+    <code>
 
-```
 {
   "created_at": "Mon Jul 27 19:00:10 +0000 2020",
   "id": 1287825123974750208,
@@ -300,7 +301,9 @@ Here's an example tweet returned from Twitter:
   "possibly_sensitive": false,
   "lang": "en"
 }
-```
+
+</code>
+</pre>
 </details>
 
 As you can see, there's *a lot* of information for just a single tweet, and 
