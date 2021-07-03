@@ -79,3 +79,25 @@ Again, you don't understand every component here, but the benefit of Colab is
 that you can combine your notes, charts, and code all in one place.
 
 **EXERCISE: Given the chart created by the code above, what are some initial takeaways?**
+
+
+## Other helpful hints
+
+* It's easy to execute cells out of order. When you go back to your notebook it's
+possible errors might pop up if you execute them one after another. The number
+in brackets to the left of your code is the order of cell execution.
+If you have two code cells and one relies on the other, then you'll need to 
+execute the first cell before executing the second.
+
+* By hovering over many of the buttons, you'll see keyboard shortcuts that are 
+useful to remember and will save you a bit of time. Here are some worth remembering:
+    * <kbd>Shift</kbd><kbd>Enter</kbd>: Execute the code in this cell
+    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>B</kbd>: Create a cell below this cell
+    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>A</kbd>: Create a cell above this cell
+    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>D</kbd>: Delete this cell
+    * <kbd>Command / Ctrl</kbd><kbd>M</kbd><kbd>Z</kbd>: Undo
+
+* Don't forget to turn on ["Corgi Mode"](https://twitter.com/GoogleColab/status/1116487177364365313)
+
+* Check out how jupyter notebooks are used in [Nobel prize winning scientific research](https://github.com/jkanner/aapt/blob/master/AAPT-WM19-Romano.ipynb)
+
