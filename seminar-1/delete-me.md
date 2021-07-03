@@ -61,8 +61,8 @@ remember this. It's a combination of nested lists and dictionaries, the same
 kind of lists and dictionaries that you'd use in python.
 
 Here's an example tweet returned from Twitter:
-<detail>
-<summary> Toggle to view JSON file</summary>
+<details>
+<summary>Toggle to view JSON file</summary>
 ```JSON
 {
   "created_at": "Mon Jul 27 19:00:10 +0000 2020",
@@ -300,7 +300,7 @@ Here's an example tweet returned from Twitter:
   "lang": "en"
 }
 ```
-</detail>
+</details>
 <summary> Toggle to view JSON file</summary>
 
 As you can see, there's *a lot* of information for just a single tweet, and 
