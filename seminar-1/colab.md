@@ -72,9 +72,11 @@ df.groupby('day-of-week')['id'].count().plot(kind='bar', title='Number of tweets
 # Note: 0 is Monday and 6 is Sunday
 ```
 
-Expected output:
+<details> 
+    <summary>Expected output:</summary>
+    <img src="https://www.brownanalytics.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="500px">
+</details>
 
-![](img/colab-output.png)
 
 Again, you don't understand every component here, but the benefit of Colab is 
 that you can combine your notes, charts, and code all in one place.
