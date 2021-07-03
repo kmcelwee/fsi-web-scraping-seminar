@@ -343,8 +343,8 @@ some trial and error is predictable.
 **Exercise: Can you make a list of the hashtags?** 
 <details>
     <summary>Toggle to see answer</summary>
-<pre>
-    <code>
+
+```python
 import json
 import requests
 
@@ -355,8 +355,7 @@ for hashtag in tweet['entities']['hashtags']:
   hashtag_list.append(hashtag['text'])
 
 print(hashtag_list)
-    </code>
-</pre>
+```
 </details>
 
 
