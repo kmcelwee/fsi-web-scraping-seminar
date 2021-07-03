@@ -322,21 +322,42 @@ with open(json_file_path) as f:
 
 ```
 
-Feel free to copy the following into a Colab notebook and mess around with the `tweet`
+Feel free to copy the following code into a Colab notebook and mess around with the `tweet`
 variable. Here are some examples of getting certain values:
 
 ```python
+import json
+import requests
+
+r = requests.get('https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/tweet.json')
+tweet = json.loads(r.text)
 # To get the text of this tweet
 tweet['full_text']
 # To get the users mentioned in this tweet
-tweet['user_mentions'][0]['screen_name']
+tweet['entities']['user_mentions'][0]['screen_name']
 ```
 
 It can sometimes be difficult to figure out the path to a variable in JSON, so
 some trial and error is predictable.
 
 **Exercise: Can you make a list of the hashtags?** 
+<details>
+    <summary>Toggle to see answer</summary>
+<pre>
+    <code>
+import json
+import requests
 
+r = requests.get('https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/tweet.json')
+tweet = json.loads(r.text)
+hashtag_list = []
+for hashtag in tweet['entities']['hashtags']:
+  hashtag_list.append(hashtag['text'])
+
+print(hashtag_list)
+    </code>
+</pre>
+</details>
 
 
 
