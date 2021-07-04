@@ -99,17 +99,20 @@ Twitter.
 What are some implications of that question? What will we need to consider when
 we hear that question?
 
-1. How will we consider artists that aren't on Twitter?
-2. How will I get a financial data for all the artists?
-3. Are different genders equally likely to be on Twitter? And what are the gender pay
+<details>
+    <summary>View some questions that may come to mind.</summary>
+* How will we consider artists that aren't on Twitter?
+* How will I get a financial data for all the artists?
+* Are different genders equally likely to be on Twitter? And what are the gender pay
     disparities in the music industry?
-4. How do we define "active on Twitter"? One tweet a week? A month?
-5. We'll have to manually relate artists to their Twitter accounts. How long will
+* How do we define "active on Twitter"? One tweet a week? A month?
+* We'll have to manually relate artists to their Twitter accounts. How long will
     that take?
-6. How might outliers distort our calculation? The entertainment industry follows
+* How might outliers distort our calculation? The entertainment industry follows
     the power law, meaning a small number of people make a majority of the money.
     If Beyonce, who doesn't tweet as much, commands 10x the money of Cardi B who 
     tweets a lot, how that one data point skew our numbers?
+</details>
 
 ## Tips
 

@@ -6,13 +6,13 @@ A collection of web scraping resources for the 2021 FSI summer course [Humanisti
 
 Goal of Seminar 1 (3 hours):
 
-* Review basics of programming with Python.
-* Provide introduction to Google Colab.
-* Understand data types and file formats (CSV & JSON).
-* Log into the Twitter API and execute our first query.
-* Be familiar with rules and limitations of working with APIs.
-* Output raw scraped data of a user's Twitter profile into a JSON file.
-* Trim raw JSON files into a useable CSV file.
+* [Review basics of programming with Python.](python.md)
+* [Introduce Google Colab.](colab.md)
+* [Understand data types and file formats (CSV & JSON).](json-and-csv.md)
+* [Log into the Twitter API and execute our first query.](tweepy.md)
+* [Be familiar with rules and limitations of working with APIs.](apis.md)
+* [Output raw scraped data of a user's Twitter profile into a JSON file.](scrape-user.md)
+* [Trim raw JSON files into a useable CSV file.](munge-json.md)
 
 Goal of Seminar 2 (3 hours):
 
@@ -30,6 +30,16 @@ Twitter API, we will be using the Python wrapper [`tweepy`](https://docs.tweepy.
 The seminars expect that you already have an approved Twitter Developer Acccount. 
 [Apply for access to the Twitter API](https://developer.twitter.com/en/apply-for-access).
 
+## Coding Resources
+
+* [YouTube Python Tutorials](https://www.youtube.com/results?search_query=python+tutorials)
+* [O'Reilly Learn](https://learning.oreilly.com/home/): A collection of every programming
+book you'll ever need. A subscription is free with your netID and offers video lectures,
+introductory books, and answers to [frequently asked programming questions.](https://learning.oreilly.com/answers/search/)
+* [Free programming books](https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books.md#python):
+    Tons of programming materials are free online. It doesn't matter too much how you get
+    started, as long as you just start!
+
 ## Useful Links
 
 * [Twitter Documentation](https://developer.twitter.com/en/docs)
@@ -37,5 +47,11 @@ The seminars expect that you already have an approved Twitter Developer Acccount
 * [StackOverflow](https://stackoverflow.com/)
 * [Google Colaboratory](https://colab.research.google.com)
 * [YouTube Python Tutorials](https://www.youtube.com/results?search_query=python+tutorials)
+* [Practice coding Python online](https://www.hackerrank.com/domains/python)
 * [YouTube Pandas Tutorials](https://www.youtube.com/results?search_query=pandas+tutorials)
 * Don't hesitate to google any question you have!
+
+## Vocabulary
+
+## Help
+* you won't get all of this on your first pass.
