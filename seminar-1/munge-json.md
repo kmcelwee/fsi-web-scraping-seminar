@@ -17,7 +17,9 @@ This is also sometimes called "data munging", and is often the longest
 part of the research process. Usually when drawing data from an API, however, 
 we can expect data to follow strict guidelines. We'll be focusing on removing 
 unnecessary data and changing Twitter data from the JSON we receive to a CSV
-that we can open in Excel or Google Sheets.
+that we can open in Excel or Google Sheets. Shifting Twitter data from JSON to
+CSV can turn a gigabyte of data into a megabyte of useful data (a 1000-fold) 
+difference.
 
 ## Turn JSON into CSV
 
@@ -90,6 +92,19 @@ understand, make sure to not just skim over this.
 The code above can be readily reused, as long as you can properly find the path
 to the tweet information that you need.
 
+## Data validation
+
+Data validation is an important part of data cleaning, but it can get complicated.
+Fundamentally, you want to make sure that the assumptions that you have about your
+data set are actually true. The Twitter API is very consistent, so you shouldn't
+encounter too many problems, but consider using 
+[python's `assert` statement](https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python))
+to double check your assumptions about how the data is structured.
+
+[I've outlined some hurdles](https://cdh.princeton.edu/updates/2021/03/19/mistakes-avoid-when-using-twitter-data-first-time/)
+I encountered when working with Twitter data and how I checked for them, but 
+chances are, you won't encounter most of them if you keep to small data sets.
+
 ## Case Study
 
 You're an intern at MTV and your boss wants to know if
@@ -121,6 +136,3 @@ we hear that question?
 * Manually sorting data takes up more time than you think! Always run the calculations
     and weigh whether the research question you want to answer is worth the 
     time that you will invest.
-* Don't expect data to be clean. Look through your data (or use [python's `assert`
-    statement](https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python)) to double check your assumptions about how the data is structured.
-

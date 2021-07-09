@@ -1,14 +1,167 @@
 # Introduction to working with APIs
 
+An API ("Application Programming Interface", you don't need to remember that, 
+no one does.) is a collection of URLs that 
+
+
+
 Before going crazy with Tweepy, it's important to understand what we just did, 
 its limitations, and how to apply what we learned to any API
 
 ## Wrappers
 
-## Rate Limiting
+We will be working with `tweepy` a library that helps us to work with the API
+in python. This is an example of a **wrapper**. APIs are built to work with any language—
+all you need is an internet connection. But as we'll see, it can be clumsy to work
+directly with the API, so programmers called API wrappers like `tweepy ` to 
+make their code cleaner and easier to use.
 
-## Data Limiting
+If you're ever looking to work with an API, let's take Reddit as an example,
+it's worth googling "reddit api python wrapper", and you'll come across libraries
+that other people have used to connect to Reddit's API. For python, I recommend
+[`praw`](https://github.com/praw-dev/praw).
+
+Wrappers are simply supposed to simply make your life easier, but it's possible
+that you're going to work with APIs that don't have wrappers in the language you
+need. The New York Times API, for example, doesn't have a good python wrapper.
+If you make one, publish it online, and you can help other programers!
+
+## API Limitations
+
+Rate limits are an important concept in order to work safely with APIs. 
+When companies like Spotify or Twitter open up their servers to connect with
+other computers, they want to impose rules to make sure no one spams their
+servers or scrapes their entire database too quickly. When considering how to
+pursue a research question, keep "rate limiting" and "data limiting" in mind.
+
+### Rate limiting
+
+Rate limits are kind of like speed limits imposed by an API. If Twitter allowed
+anybody to scrape every single tweet ever, it would place immense strain on their
+infrastructure (and since data is their main commodity, they can sell this access
+to corporations for a hefty price.)
+
+Rate limits [are documented here.](https://developer.twitter.com/en/docs/twitter-api/rate-limits)
+We have created one app, so in each 15-minute window we can execute 300 searches.
+
+![](img/rate-limiting.png)
+
+Since each search contains a maximum of 200 tweets, we can get 60,000 tweets (!)
+in 15 minutes. When just starting out, rarely will one's research questions 
+reach the limit, but if you need a lot of data for your analysis, your scrape
+may take days to execute if the API's rate limit is especially low. Smaller
+companies probably will have stronger limitations on how
+much data you can collect from their site. In the case of Facebook and TikTok, you can't
+scrape data at all.
+
+### Data Limiting
+
+As discussed previously, this data is highly valuable, and companies like Facebook
+have decided to cut off developers from 
 
 ## Secret Keys
 
-## Other popular APIs
+If someone has your public and private key, they can log in to the API and 
+make it appear like you are abusing the rate limit or even post tweets as you (!).
+Never publish your private key anywhere.
+
+## Legal 
+
+**I AM NOT A LAWYER, THIS IS NOT LEGAL ADVICE**
+
+As long as you're using the API, you're not doing anything illegal, but web
+scraping in general (say if I wrote a script to scrape all the email addresses
+from https://www.princeton.edu/) is quasi-illegal. We won't go into how to scrape
+outside of APIs in these seminars, but consider that making thousands of requests to any
+website can cripple its infrastructure. This is called a 
+[Denial of Service Attack (DoS).](https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos)
+So it's best to follow [best practices](https://data-lessons.github.io/library-webscraping-DEPRECATED/05-conclusion/)
+when collecting data outside the formal API process.
+
+## Ethics
+
+Working with Twitter data most users know that Twitter is a public place, and
+anyone can see their tweets. Even better, working with Reddit, people are 
+operating under the assumption of anonymity, so there are fewer ethical considerations.
+
+But when you send a tweet, you may assume that it's public, but how much control
+should you have after posting to a platform?
+
+* How would you feel if a book was written on internet culture, and you're tweet was 
+included in the paper as representative of a new language trend?
+* Training a machine learning model to detect sarcasm?
+* Picture used to train a facial recognition algorithm used to track people
+who look like you?
+
+(All these are real-life examples.)
+
+As you develop your research question, consider the ethical implications of 
+collecting this data. If you scraped a user's timeline, was this person a 
+public figure? If you scraped all tweets that used a certain hashtag, how
+many people are you collecting data from? Did any of these people expect
+their data to be collected by a first years at Princeton? 
+
+### Popular APIs
+
+* [Wikipedia](https://www.mediawiki.org/wiki/API:Main_page)
+* [Reddit](https://www.reddit.com/dev/api)
+* [Spotify](https://developer.spotify.com/documentation/web-api/)
+* [more...](https://github.com/public-apis/public-apis)
+
+## Third-party apps
+
+Some third-party apps offer
+
+https://levels.io/giveaway/
+
+https://towardsdatascience.com/fake-follower-calculators-misinform-users-journalists-with-dubious-statistics-659b60fc4d5a
+
+
+## The Twitter API
+
+### General structure
+
+Twitter is exceptional as a social media company because it gives researchers
+access to almost its entire site. Twitter allows you to access the following 
+databases:
+
+* Tweets
+* Users
+* Direct Messages
+* Lists
+* Trends
+* Media
+* Places
+
+Given these databases, what kind of questions could you ask?
+
+### What is a Twitter ID?
+
+A Twitter ID is a unique identifier for each tweet. Having a unique ID is 
+important for Twitter to store the thousands of tweets posted every second.
+If you have the ID of a tweet (perhaps from JSON data that you've scraped)
+and you want to see the original tweet in your browser, just follow this recipe:
+
+```
+https://twitter.com/{PROFILE}/status/{TWEET_ID}
+# Example:
+https://twitter.com/mattxiv/status/1368246126302945284
+```
+
+If you'd like, try to use this tweet ID `1116487177364365313` to find the 
+original Tweet. Often, organizations like [Documenting the Now](https://www.docnow.io/) 
+will store tweet IDs only, and then researchers can "rehydrate" those IDs.
+Since there's a limited time window to collect tweets during momentous occasions,
+you're welcome to contribute to resources like these to preserve how people
+reacted online. [Check out Documenting the Now's catalog.](https://catalog.docnow.io/)
+
+
+## Existing datasets
+
+Before scraping your own datasets, consider that other people may have had similar
+questions as you. Check out these sites 
+
+wikipedia
+github
+https://www.docnow.io/
+Reddit: r/datasets

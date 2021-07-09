@@ -10,4 +10,3 @@
 * [Output raw scraped data of a user's Twitter profile into a JSON file.](scrape-user.md)
 * [Trim raw JSON files into a useable CSV file.](munge-json.md)
 * [Talk about potential projects / get inspiration](examples.md)
-
