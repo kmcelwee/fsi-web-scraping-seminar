@@ -28,41 +28,41 @@ vocabulary and learning how to piece together a Google search is half the battle
 
 1. Make a list of all numbers between 1 and 10 and assign it to a variable. Print them out.
 
-<details><summary>View Solution</summary><pre><code>
+<details><summary>View Solution</summary><pre>
 number_list = list(range(1, 11))
 
 for number in number_list:
     print(number)
-</code></pre></details>
+</pre></details>
 
 1. Write a sentence and store it in a variable. Write a function to return the
 word count of that sentence.
 
-<details><summary>View Solution</summary><pre><code>
+<details><summary>View Solution</summary><pre>
 def word_count(sentence):
     word_list = sentence.split()
     return len(word_count)    
 
 sentence = "The quick brown fox jumps over the lazy dog."
 print(word_count(sentence))
-</code></pre></details>
+</pre></details>
 
 1. Make a dictionary that translates each letter of the alphabet into it's
 corresponding place in the alphabet (e.g. "a" => 1, "b" => 2)
 
 <details>
 <summary>View Solution</summary>
-<pre><code>
+<pre>
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 alph_dict = {}
 for i in range(26):
     alph_dict[alphabet[i]] = i + 1
-</code></pre>
+</pre>
 
 Or...
-<pre><code>
+<pre>
 alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxyz", range(1, 27))}
-</code></pre>
+</pre>
 </details>
 
 1. Use the dictionary you created above to translate a function that turns a word into a list of numbers.
@@ -70,24 +70,24 @@ For example, `translate_word('princeton')` would return `[16, 18, 9, 14, 3, 5, 2
 
 <details>
 <summary>View Solution</summary>
-<pre><code>
+<pre>
 def translate_word(word):
     alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxyz", range(1, 27))}
     return_list = []
     for letter in word:
         return_list.append(alph_dict[letter])
     return return_list
-</code></pre>
+</pre>
 
 Or...
 
-<pre><code>
+<pre>
 def translate_word(word):
     alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxyz", range(1, 27))}
     return [alph_dict[letter] for letter in word]
 
 translate_word('princeton')
-</code></pre>
+</pre>
 </details>
 
 What are things you should consider when you make this function?
@@ -95,8 +95,8 @@ What are things you should consider when you make this function?
 <details><summary>View Solution</summary>
 
 <ul>
-    <li>Expect the word is lowercase, we would get an error if we fed <pre>'Princeton'</pre> into the function.
-See what kind of error you would get. If you wanted you could set <pre>word = word.lower()</pre> to
+    <li>Expect the word is lowercase, we would get an error if we fed <tt>'Princeton'</tt> into the function.
+See what kind of error you would get. If you wanted you could set <tt>word = word.lower()</tt> to
 make sure that all the characters are lowercase.</li>
     <li>This function expects a word. If we fed `FSI Class of 2025!` into it, it would cause
 an error because the blank space character and the exclamation point isn't in our dictionary.
@@ -108,7 +108,7 @@ can tell us if any of the characters in a string aren't a letter.
 
 With these considerations in mind, we can rewrite this function.
 
-<pre><code>
+<pre>
 def translate_word(word):
     # Ensure that there are no spaces or punctuation in our code
     raise Exception('Only letters are permitted in this function')
@@ -118,7 +118,7 @@ def translate_word(word):
     alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxyz", range(1, 27))}
     return [alph_dict[letter] for letter in word]
 
-</code></pre>
+</pre>
 
 Code is never finished! We could expand this function forever. So don't get
 too wrapped up in making your code "perfect". Write code that tries
