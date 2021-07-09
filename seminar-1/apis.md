@@ -1,12 +1,29 @@
 # Introduction to working with APIs
 
 An API ("Application Programming Interface", you don't need to remember that, 
-no one does.) is a collection of URLs that 
+no one does.) is a collection of commands you can issue over the internet to 
+collect data from websites. Collecting this data is usually done over code, 
+but you can also see this data by just visiting URLs in your browser.
 
+This URL [https://api.github.com/users/princeton-cdh/repos](https://api.github.com/users/princeton-cdh/repos)
+will list information about all the code under the CDH's GitHub account.
+(If you're in Firefox, click on the "Raw Data" button to see things more clearly.)
+This is JSON data like any other, and you could write a quick script to list 
+out all the codebases we've worked on.
 
+The power of this is that as long as you follow the formula above:
+```
+https://api.github.com/users/{USER}/repos
+```
+you can get the public code bases on *any* GitHub user. From that information
+we could then get a count of all issues on all the repositories so that we
+know how much work is left to do. GitHub is pretty complicated, but here's a 
+link to the [API documentation](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api).
 
-Before going crazy with Tweepy, it's important to understand what we just did, 
-its limitations, and how to apply what we learned to any API
+If we didn't have an API, to accomplish something similar we'd have to scrape the CDH's
+[profile page](https://github.com/Princeton-CDH), which would be *a lot* harder.
+APIs store information in a clean, consistent way that makes it easy to collect
+information (for better and for worse.)
 
 ## Wrappers
 
@@ -57,7 +74,15 @@ scrape data at all.
 ### Data Limiting
 
 As discussed previously, this data is highly valuable, and companies like Facebook
-have decided to cut off developers from 
+have decided to cut off developers from accessing that data. Spotify won't allow
+programmers to access counts of how long a song has been listened to (even
+though it's available in their UI.) Twitter limits users to only the latest 3200 tweets when scraping a user's 
+timeline. You can only get the latest 100 retweets on a tweet 
+[which has led to problems in the past](https://levels.io/giveaway/).
+
+When pursuing a research question, make sure that the resources that you need
+to answer that question willl be fully included in the dataset you're collecting
+[otherwise you may be misinforming people.](https://towardsdatascience.com/fake-follower-calculators-misinform-users-journalists-with-dubious-statistics-659b60fc4d5a)
 
 ## Secret Keys
 
@@ -108,15 +133,6 @@ their data to be collected by a first years at Princeton?
 * [Spotify](https://developer.spotify.com/documentation/web-api/)
 * [more...](https://github.com/public-apis/public-apis)
 
-## Third-party apps
-
-Some third-party apps offer
-
-https://levels.io/giveaway/
-
-https://towardsdatascience.com/fake-follower-calculators-misinform-users-journalists-with-dubious-statistics-659b60fc4d5a
-
-
 ## The Twitter API
 
 ### General structure
@@ -159,9 +175,11 @@ reacted online. [Check out Documenting the Now's catalog.](https://catalog.docno
 ## Existing datasets
 
 Before scraping your own datasets, consider that other people may have had similar
-questions as you. Check out these sites 
+questions as you. Check out these sites before beginning your work to see if 
+other researchers can save you time!
+People who create datasets want them to be put to good use, so they'll try to share them as widely as possible.
 
-wikipedia
-github
-https://www.docnow.io/
-Reddit: r/datasets
+* Wikipedia has a lot of tabular data you can draw from!
+* [Github](https://github.com/) is often used for code, but researchers will often post their datasets there as well
+* [Documenting the Now](https://catalog.docnow.io/), as mentioned above, has a huge resource of tweets
+* [r/datasets](https://www.reddit.com/r/datasets) contains a lot of datasets that people compiled for their research or for fun.

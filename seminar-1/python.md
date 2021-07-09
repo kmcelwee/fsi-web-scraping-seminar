@@ -95,13 +95,13 @@ What are things you should consider when you make this function?
 <details><summary>View Solution</summary>
 
 <ul>
-    <li>Expect the word is lowercase, we would get an error if we fed <tt>'Princeton'</tt> into the function.
-See what kind of error you would get. If you wanted you could set <tt>word = word.lower()</tt> to
+    <li>Expect the word is lowercase, we would get an error if we fed <code>'Princeton'</code> into the function.
+See what kind of error you would get. If you wanted you could set <code>word = word.lower()</code> to
 make sure that all the characters are lowercase.</li>
     <li>This function expects a word. If we fed `FSI Class of 2025!` into it, it would cause
 an error because the blank space character and the exclamation point isn't in our dictionary.
 You can use raise an error if a user inputs the wrong. 
-Python's <a href="https://www.tutorialspoint.com/python/string_isalpha.htm"><pre>str.isalpha()</pre></a>
+Python's <a href="https://www.tutorialspoint.com/python/string_isalpha.htm"><code>str.isalpha()</code></a>
 can tell us if any of the characters in a string aren't a letter.
 </li>
 </ul>
@@ -117,7 +117,6 @@ def translate_word(word):
     word = word.lower()
     alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxyz", range(1, 27))}
     return [alph_dict[letter] for letter in word]
-
 </pre>
 
 Code is never finished! We could expand this function forever. So don't get

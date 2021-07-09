@@ -7,20 +7,25 @@
     * [r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/): Where data visualization fans show off their work. You'll often see the cutting-edge here.
     * [r/dataisugly](https://www.reddit.com/r/dataisugly/): Negative inspiration.
 * Data journalists
-    * Data journalists' are often the most approachable forms of data-driven research that you can read.
+    * Data journalists are often the most approachable forms of data-driven research that you can read.
     * [The Pudding](https://pudding.cool/)
     * [Washington Post Graphics](https://twitter.com/PostGraphics?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
     * [NYT Graphics](https://twitter.com/nytgraphics?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
-
-[The Fortune 100 and Black Lives Matter](https://www.brownanalytics.com/fortune-100-blm-report/site/index.html)
-
-How did Fortune 100 companies react on Twitter to the death of George Floyd and the subsequent protests in the summer of 2020?
+* Data visualization projects and essays
+    * [The Fortune 100 and Black Lives Matter](https://www.brownanalytics.com/fortune-100-blm-report/site/index.html):
+        How did Fortune 100 companies react on Twitter to the death of George Floyd and the subsequent protests in the summer of 2020?
+    * [What is Congress tweeting about?](https://congress.pudding.cool/): Topic modeling to monitor what Congress is most
 
 ![](img/blm-fortune-100.png)
 
 ## Build a research question
 
-You may have a question like ""
+You may have a question like "What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about?"
+By scraping her account, we could collect all of her tweets and
+categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
+But what question is this *really* answering? What techniques did the Pudding
+use to put their data into perspective? How effective is this answering our 
+original question?
 
 **EXERCISE:** Let's workshop on 2-3 potential research questions together.
 
