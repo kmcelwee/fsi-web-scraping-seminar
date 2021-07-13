@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Colab"
-nav_order: 2
+nav_order: 1
 parent: Seminar 1
 permalink: /seminar-1/colab
 ---

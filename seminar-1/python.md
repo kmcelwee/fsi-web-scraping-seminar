@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Python programming refresher"
-nav_order: 1
+nav_order: 2
 parent: Seminar 1
 permalink: /seminar-1/python
 ---

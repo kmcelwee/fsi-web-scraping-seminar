@@ -11,7 +11,7 @@ has_children: true
 **July 16, 2021 (1:30-4pm)**
 
 By the end of this seminar, I hope that you'll be able to request data from APIs, specifically
-Twitter, transform data between data formats, and develop research questions.
+Twitter, transform data between data formats, and develop appropriate research questions.
 We'll also explore the limitations of data-driven research in answering those research
 questions.
 
