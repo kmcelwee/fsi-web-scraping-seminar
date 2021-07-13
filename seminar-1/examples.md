@@ -21,12 +21,11 @@ adding data, ensure that the time you're prepared to invest are worth the
 question you're trying to answer!)
 1. Analyze your data! Build charts to answer your original question. Were you wrong?
 That's okay! That means you probably had a counter-intuitive result. What 
-led you to be
+led you to have a wrong hypothesis?
 
 ## Case Study 2: Analyzing Congressional Policy
 
-You may have a question like "What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about?"
-By scraping her account, we could collect all of her tweets and
+What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about? By scraping her account, we could collect all of her tweets and
 categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
 
 🏛️ **Questions**

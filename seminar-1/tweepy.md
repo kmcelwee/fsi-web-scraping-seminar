@@ -12,7 +12,7 @@ Let's log into the Twitter API and execute our first query!
 
 ## Twitter Advanced Search
 
-Before using the Twitter API, consider Twitter Advanced Search. You can often
+Before using the Twitter API, consider [Twitter Advanced Search](https://twitter.com/search-advanced?lang=en). You can often
 get a lot of answers before writing a line of code! Other forms of site-specific syntax 
 can also be useful
 

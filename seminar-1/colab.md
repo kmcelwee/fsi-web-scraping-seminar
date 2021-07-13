@@ -81,15 +81,15 @@ df.groupby('day-of-week')['id'].count().plot(kind='bar', title='Number of tweets
 ```
 
 <details> 
-    <summary>Expected output:</summary>
-    <img src="https://www.brownanalytics.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="500px">
+    <summary><a class="btn btn-green">View expected output</a></summary>
+    <img src="https://www.brownanalytics.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="400px">
 </details>
 
 
 Again, you don't understand every component here, but the benefit of Colab is 
 that you can combine your notes, charts, and code all in one place.
 
-**EXERCISES:**
+📈 **Exercises:**
 1. Given the chart created by the code above, what is the answer to our research question?
 2. What are some questions that come up from this chart? How might it be improved?
 3. The header of the CSV is `timestamp,id,text,favorite_count,retweet_count,hashtags`. What 
