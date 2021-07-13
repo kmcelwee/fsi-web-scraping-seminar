@@ -8,6 +8,9 @@ permalink: /seminar-1/tweepy
 
 # Introduction to Tweepy
 
+1. TOC
+{:toc}
+
 Let's log into the Twitter API and execute our first query! (Don't worry, I'll
 explain everything about how APIs work next, first let's just get data onto
 our computer.)

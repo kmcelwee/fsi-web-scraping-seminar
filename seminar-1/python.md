@@ -8,6 +8,9 @@ permalink: /seminar-1/python
 
 # Python programming refresher
 
+1. TOC
+{:toc}
+
 ## Tips on learning how to code 
 
 The following are pieces of advice from programmers at the CDH and the library:
@@ -24,7 +27,7 @@ most important thing is to get started.
 it out if you keep working at it!
 * [Resist imposter syndrome.](https://adainitiative.org/continue-our-work/impostor-syndrome-training/)
 
-## Python Review Exercise
+## Exercises
 
 If you don't know how to proceed, try googling the solution. Prepare an answer
 before clicking the "View Solution" button.

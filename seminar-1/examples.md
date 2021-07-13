@@ -8,7 +8,10 @@ permalink: /seminar-1/examples
 
 # How to develop a research question
 
-## Typical research workflow
+1. TOC
+{:toc}
+
+## Typical workflow
 
 1. Be curious and find a question that interests you.
 1. Try to find a way to answer your question with data. What kind of assumptions
@@ -34,7 +37,7 @@ categorize them by issue [as The Pudding did.](https://congress.pudding.cool/per
 * How effective would this data be in answering our original question?
 * What techniques did the Pudding use to put their data into perspective? 
 
-## Twitter Scraping Inspiration
+## Twitter scraping inspiration
 
 * Subreddits
     * [r/datasets](https://www.reddit.com/r/datasets/): Search here for your datasets before scraping! Sometimes someone else has already done the work.

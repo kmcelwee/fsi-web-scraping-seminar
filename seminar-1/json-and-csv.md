@@ -8,6 +8,9 @@ permalink: /seminar-1/json-and-csv
 
 # Working with different file formats
 
+1. TOC
+{:toc}
+
 ## What is a CSV?
 
 If you've ever worked with a spreadsheet, you know what a CSV is. A CSV is just

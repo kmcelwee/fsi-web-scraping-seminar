@@ -8,6 +8,9 @@ permalink: /seminar-1/munge-json
 
 # Data Cleaning
 
+1. TOC
+{:toc}
+
 The most important (and least glamorous) part of working with data is creating
 a data pipeline. This data pipeline implements a cleaning process where you transform
 the data you find in the wild into a dataset that you can use to answer your

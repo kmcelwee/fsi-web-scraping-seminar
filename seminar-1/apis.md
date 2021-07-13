@@ -8,6 +8,9 @@ permalink: /seminar-1/apis
 
 # Introduction to working with APIs
 
+1. TOC
+{:toc}
+
 An API ("Application Programming Interface", you don't need to remember that, 
 no one does) is a collection of commands you can issue over the internet to 
 collect data from websites. Collecting this data is usually done over code, 
