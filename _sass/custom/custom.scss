@@ -1,0 +1,12 @@
+details {
+  font: 16px "Open Sans", Calibri, sans-serif;
+}
+
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}

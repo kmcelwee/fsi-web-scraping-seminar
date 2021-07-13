@@ -113,19 +113,17 @@ to double check your assumptions about how the data is structured.
 I encountered when working with Twitter data and how I checked for them, but 
 chances are, you won't encounter most of them if you keep to small data sets.
 
-## Case Study
+## Case Study 1: MTV Internship
 
 You're an intern at MTV and your boss wants to know if
 musicians active on Twitter get paid more money than those who aren't active on
 Twitter.
 
-What are some implications of that question? What will we need to consider when
-we hear that question?
+🎤 **What are some questions we should ask before pursuing this project?**
 
 <details>
-    <summary>View some questions that may come to mind.</summary>
+    <summary><a class="btn btn-green">View examples</a></summary>
 <ul>
-
 <li>How will we consider artists that aren't on Twitter?</li>
 <li>How will I get a financial data for all the artists?</li>
 <li>Are different genders equally likely to be on Twitter? And what are the gender pay

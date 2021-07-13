@@ -89,9 +89,9 @@ we've looked at?
 user = api.get_user('SCREEN_NAME')
 ```
 
-🪐 **Exercise: Try assigning the location of NASA to a variable.**
+🪐 **Exercise: Get the location of NASA through their Twitter profile.**
 
-<details><summary>Toggle to the answer:</summary>
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/d23a027129b0b4f2026afb519a8873c5.js"></script>
 </details>
 

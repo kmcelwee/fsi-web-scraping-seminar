@@ -54,7 +54,7 @@ remember this. It's a combination of nested lists and dictionaries, the same
 kind of lists and dictionaries that you'd use in python.
 
 <details>
-<summary>Toggle to see an example tweet JSON from Twitter:</summary>
+<summary><a class="btn btn-blue">View an example tweet JSON from Twitter</a></summary>
 <script src="https://gist.github.com/kmcelwee/e09c9f03930886b5958fca287e648e36.js"></script>
 </details>
 
@@ -99,7 +99,6 @@ some trial and error is predictable.
 💡 **Exercise: Can you make a list of the hashtags with the example tweet provided above?** 
 
 <details>
-<summary>Toggle to see answer</summary>
+<summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/6e8e20b4321bf2fe2e5ce7a7f171e396.js"></script>
-</pre>
 </details>

@@ -120,11 +120,11 @@ operating under the assumption of anonymity, so there are fewer ethical consider
 But when you send a tweet, you may assume that it's public, but how much control
 should you have after posting to a platform?
 
-* How would you feel if a book was written on internet culture, and you're tweet was 
-included in the paper as representative of a new language trend?
-* Training a machine learning model to detect sarcasm?
-* Picture used to train a facial recognition algorithm used to track people
-who look like you?
+🤔 **How would you feel if a tweet you wrote...**
+
+* ...was included as an example in a book about internet culture?
+* ...was used to train a machine learning model to detect sarcasm?
+* ...included a picture that was used to train a facial recognition algorithm?
 
 (All these are real-life examples.)
 
@@ -157,7 +157,7 @@ databases:
 * Media
 * Places
 
-**Given these databases, what kind of questions could you ask?**
+📚 **Given these databases, what kind of questions could you ask?**
 
 ### What is a Twitter ID?
 

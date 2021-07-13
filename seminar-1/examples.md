@@ -8,6 +8,33 @@ permalink: /seminar-1/examples
 
 # How to develop a research question
 
+## Typical research workflow
+
+1. Be curious and find a question that interests you.
+1. Try to find a way to answer your question with data. What kind of assumptions
+are you making when you make this leap?
+1. What are all the fields you need to answer this data-driven question?
+1. Execute scrape.
+1. Pare down data into just the information you need.
+1. Enrich the dataset with any external datasets if necessary. (If manually
+adding data, ensure that the time you're prepared to invest are worth the
+question you're trying to answer!)
+1. Analyze your data! Build charts to answer your original question. Were you wrong?
+That's okay! That means you probably had a counter-intuitive result. What 
+led you to be
+
+## Case Study 2: Analyzing Congressional Policy
+
+You may have a question like "What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about?"
+By scraping her account, we could collect all of her tweets and
+categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
+
+🏛️ **Questions**
+* What kind of concrete takeaways can you make from Sewell's Twitter activity?
+* What kind of interpretive takeaways can you make from Sewell's Twitter activity?
+* What techniques did the Pudding use to put their data into perspective? 
+* How effective is this answering our original question?
+
 ## Twitter Scraping Inspiration
 
 * Subreddits
@@ -25,32 +52,5 @@ permalink: /seminar-1/examples
     * [What is Congress tweeting about?](https://congress.pudding.cool/): Topic modeling to monitor what Congress is most
 
 ![](img/blm-fortune-100.png)
-
-## Build a research question
-
-You may have a question like "What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about?"
-By scraping her account, we could collect all of her tweets and
-categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
-
-**EXERCISES**
-* What kind of concrete takeaways can you make from Sewell's Twitter activity?
-* What kind of interpretive takeaways can you make from Sewell's Twitter activity?
-* What techniques did the Pudding use to put their data into perspective? 
-* How effective is this answering our original question?
-
-## Typical research workflow
-
-1. Be curious and find a question that interests you.
-1. Try to find a way to answer your question with data. What kind of assumptions
-are you making when you make this leap?
-1. What are all the fields you need to answer this data-driven question?
-1. Execute scrape.
-1. Pare down data into just the information you need.
-1. Enrich the dataset with any external datasets if necessary. (If manually
-adding data, ensure that the time you're prepared to invest are worth the
-question you're trying to answer!)
-1. Analyze your data! Build charts to answer your original question. Were you wrong?
-That's okay! That means you probably had a counter-intuitive result. What 
-led you to be
 
 🪚 **Exercise: Let's workshop on 2-3 potential research questions together.**

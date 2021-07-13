@@ -7,24 +7,12 @@ permalink: /seminar-1/python
 ---
 
 <style>
-details {
-  font: 16px "Open Sans", Calibri, sans-serif;
-}
-
-details > summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-details > summary::-webkit-details-marker {
-  display: none;
-}
 
 </style>
 
 # Python programming refresher
 
-test{:.btn .btn-blue}
+
 
 ## Tips on learning how to code 
 
@@ -49,14 +37,14 @@ before clicking the "View Solution" button.
 
 **Exercise 1:** Create a list of all integers between 1 and 10 and assign it to a variable. Print them out.
 
-<details><summary>View Solution</summary>
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/ae02565da0d7f02ab91eb6215807748e.js"></script>
 </details>
 
 **Exercise 2:** Write a sentence and store it as a variable. Write a function to return the
 word count of that sentence.
 
-<details><summary>View Solution</summary>
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/a78dd62fd5a06e0060e86a804f11f11a.js"></script>
 </details>
 
@@ -64,7 +52,7 @@ word count of that sentence.
 corresponding place in the alphabet (e.g. `"a" => 1`, `"b" => 2`)
 
 <details>
-<summary>View Solution</summary>
+<summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/0775fa1537f7d63a55b799e83d3a8db2.js"></script>
 </details>
 
@@ -72,13 +60,13 @@ corresponding place in the alphabet (e.g. `"a" => 1`, `"b" => 2`)
 For example, `translate_word('princeton')` would return `[16, 18, 9, 14, 3, 5, 20, 15, 14]`
 
 <details>
-<summary>View Solution</summary>
+<summary><a class="btn btn-purple">View Solution</a></summary>
 <script src="https://gist.github.com/kmcelwee/02f969d68fe82b75efd12a1bb833f67d.js"></script>
 </details>
 
 **Exercise 5:** What are some errors you could encounter when writing the `translate_word` function?
 
-<details><summary>View Solution</summary>
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
 
 <ul>
     <li>We would get an error if we fed <code>'Princeton'</code> into the function because it contains
