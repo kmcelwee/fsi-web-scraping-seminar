@@ -7,19 +7,16 @@ The following are pieces of advice from programmers at the CDH and the library:
 * You won't get this the first time around, and that's okay! This website isn't
 going anywhere, so feel free to return to it as reference.
 * Google is a programmer's best friend. Any problem you have, there's a 99.9 percent
-chance another person has had that exact thought before.
-* There are so many free resources on the internet to help you.
-* This is just writing instructions. It's unforgiving if a single character
-is out of place.
-* Don't just listen, code. The best way to become a coder is to code!
-* We're starting with python, but programming language really doesn't matter.
+chance another person has had that exact problem before.
+* There are so many free resources on the internet to help you. Use them!
+* This is just writing instructions. Programming isn't math. Don't count yourself out just because you aren't the best at mathematics.
+* The best way to become a coder is to code. Try things out, and mess up.
+* We're starting with python, but programming language really doesn't matter. The 
+most important thing is to get started.
 * Be kind to yourself, this is a whole new way of thinking.
-* Programming isn't math. Don't count yourself out just because you aren't
-the best at mathematics.
 * Be persistent. Coding takes time, and the solution is out there. You will figure
-it out if you keep working at it! But also taking a step away from your work for
-a walk can also 
-* [Resist imposter syndrome](https://adainitiative.org/continue-our-work/impostor-syndrome-training/)
+it out if you keep working at it!
+* [Resist imposter syndrome.](https://adainitiative.org/continue-our-work/impostor-syndrome-training/)
 
 ## Python Review Exercise
 
@@ -35,7 +32,7 @@ for number in number_list:
     print(number)
 </pre></details>
 
-1. Write a sentence and store it in a variable. Write a function to return the
+2. Write a sentence and store it as a variable. Write a function to return the
 word count of that sentence.
 
 <details><summary>View Solution</summary><pre>
@@ -47,7 +44,7 @@ sentence = "The quick brown fox jumps over the lazy dog."
 print(word_count(sentence))
 </pre></details>
 
-1. Make a dictionary that translates each letter of the alphabet into it's
+3. Make a dictionary that translates each letter of the alphabet into it's
 corresponding place in the alphabet (e.g. "a" => 1, "b" => 2)
 
 <details>
@@ -65,7 +62,7 @@ alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxy
 </pre>
 </details>
 
-1. Use the dictionary you created above to translate a function that turns a word into a list of numbers.
+4. Use the dictionary you created above to translate a function that turns a word into a list of numbers.
 For example, `translate_word('princeton')` would return `[16, 18, 9, 14, 3, 5, 20, 15, 14]`
 
 <details>
@@ -77,6 +74,8 @@ def translate_word(word):
     for letter in word:
         return_list.append(alph_dict[letter])
     return return_list
+
+translate_word('princeton')
 </pre>
 
 Or...
@@ -90,19 +89,18 @@ translate_word('princeton')
 </pre>
 </details>
 
-What are things you should consider when you make this function?
+5. What are some errors you could encounter when writing the `translate_word` function?
 
 <details><summary>View Solution</summary>
 
 <ul>
-    <li>Expect the word is lowercase, we would get an error if we fed <code>'Princeton'</code> into the function.
-See what kind of error you would get. If you wanted you could set <code>word = word.lower()</code> to
-make sure that all the characters are lowercase.</li>
+    <li>We would get an error if we fed <code>'Princeton'</code> into the function because it contains
+        an uppercase letter. (Try it out to see what kind of error you would get.)
+To ensure that the string is lowercase, use <code>word = word.lower()</code>.</li>
     <li>This function expects a word. If we fed `FSI Class of 2025!` into it, it would cause
 an error because the blank space character and the exclamation point isn't in our dictionary.
-You can use raise an error if a user inputs the wrong. 
 Python's <a href="https://www.tutorialspoint.com/python/string_isalpha.htm"><code>str.isalpha()</code></a>
-can tell us if any of the characters in a string aren't a letter.
+function can tell us if any of the characters in a string aren't a letter.
 </li>
 </ul>
 
@@ -119,9 +117,8 @@ def translate_word(word):
     return [alph_dict[letter] for letter in word]
 </pre>
 
-Code is never finished! We could expand this function forever. So don't get
-too wrapped up in making your code "perfect". Write code that tries
-to avoid easy mistakes, and serves your ultimate research question. If you share
-code with others, however, make sure to document your assumptions
-
 </details>
+
+Code is never finished! We could keep rewriting many of these functions forever.
+Don't get too wrapped up in making your code "perfect". Write code that is clear,
+well-documented, and serves your ultimate research question. 

@@ -2,7 +2,7 @@
 
 **July 16, 2021 (1:30-4pm)**
 
-* [Review basics of programming with Python.](python.md)
+* [Python programming refresher](python.md)
 * [Introduce Google Colab.](colab.md)
 * [Understand data types and file formats (CSV & JSON).](json-and-csv.md)
 * [Log into the Twitter API and execute our first query.](tweepy.md)
