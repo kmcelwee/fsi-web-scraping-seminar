@@ -4,26 +4,24 @@
 
 The following are pieces of advice from programmers at the CDH and the library:
 
-* You won't get this the first time around, and that's okay! This website isn't
-going anywhere, so feel free to return to it as reference.
 * Google is a programmer's best friend. Any problem you have, there's a 99.9 percent
 chance another person has had that exact problem before.
 * There are so many free resources on the internet to help you. Use them!
 * This is just writing instructions. Programming isn't math. Don't count yourself out just because you aren't the best at mathematics.
-* The best way to become a coder is to code. Try things out, and mess up.
+* The best way to become a coder is to code. Try things out. Mess up.
 * We're starting with python, but programming language really doesn't matter. The 
 most important thing is to get started.
-* Be kind to yourself, this is a whole new way of thinking.
+* Don't expect to understand a topic the first time around. Be kind to yourself, this is a whole new way of thinking.
 * Be persistent. Coding takes time, and the solution is out there. You will figure
 it out if you keep working at it!
 * [Resist imposter syndrome.](https://adainitiative.org/continue-our-work/impostor-syndrome-training/)
 
 ## Python Review Exercise
 
-Before looking at the solution, practice googling the answers. Learning the 
-vocabulary and learning how to piece together a Google search is half the battle.
+If you don't know how to proceed, try googling the solution. Prepare an answer
+before clicking the "View Solution" button.
 
-1. Make a list of all numbers between 1 and 10 and assign it to a variable. Print them out.
+**Exercise 1:** Create a list of all integers between 1 and 10 and assign it to a variable. Print them out.
 
 <details><summary>View Solution</summary><pre>
 number_list = list(range(1, 11))
@@ -32,7 +30,7 @@ for number in number_list:
     print(number)
 </pre></details>
 
-2. Write a sentence and store it as a variable. Write a function to return the
+**Exercise 2:** Write a sentence and store it as a variable. Write a function to return the
 word count of that sentence.
 
 <details><summary>View Solution</summary><pre>
@@ -44,8 +42,8 @@ sentence = "The quick brown fox jumps over the lazy dog."
 print(word_count(sentence))
 </pre></details>
 
-3. Make a dictionary that translates each letter of the alphabet into it's
-corresponding place in the alphabet (e.g. "a" => 1, "b" => 2)
+**Exercise 3:** Make a dictionary that translates each letter of the alphabet into it's
+corresponding place in the alphabet (e.g. `"a" => 1`, `"b" => 2`)
 
 <details>
 <summary>View Solution</summary>
@@ -62,7 +60,7 @@ alph_dict = {letter: number for letter, number in zip("abcdefghijklmnopqrstuvwxy
 </pre>
 </details>
 
-4. Use the dictionary you created above to translate a function that turns a word into a list of numbers.
+**Exercise 4:** Write a function that turns a word into a list of numbers that corresponds with their placement in the alphabet. Use the dictionary you created in the previous exercise.
 For example, `translate_word('princeton')` would return `[16, 18, 9, 14, 3, 5, 20, 15, 14]`
 
 <details>
@@ -89,7 +87,7 @@ translate_word('princeton')
 </pre>
 </details>
 
-5. What are some errors you could encounter when writing the `translate_word` function?
+**Exercise 5:** What are some errors you could encounter when writing the `translate_word` function?
 
 <details><summary>View Solution</summary>
 
