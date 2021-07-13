@@ -1,1 +1,10 @@
-theme: jekyll-theme-hacker
+# title: FSI Web Scraping Seminar (Summer 2021)
+# email: kmcelwee@princeton.edu
+# description: >- # this means to ignore newlines until "baseurl:"
+#   A collection of web scraping resources for the 2021 FSI summer course Humanistic Approaches to Media and Data.
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: kevinrmcelwee
+# github_username:  kmcelwee
+
+theme: just-the-docs
