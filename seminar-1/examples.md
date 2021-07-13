@@ -1,3 +1,11 @@
+---
+layout: default
+title: How to develop a research question
+nav_order: 7
+parent: Seminar 1
+permalink: /seminar-1/examples
+---
+
 # How to develop a research question
 
 ## Twitter Scraping Inspiration
@@ -23,11 +31,12 @@
 You may have a question like "What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about?"
 By scraping her account, we could collect all of her tweets and
 categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
-But what question is this *really* answering? What techniques did the Pudding
-use to put their data into perspective? How effective is this answering our 
-original question?
 
-**EXERCISE:** Let's workshop on 2-3 potential research questions together.
+**EXERCISES**
+* What kind of concrete takeaways can you make from Sewell's Twitter activity?
+* What kind of interpretive takeaways can you make from Sewell's Twitter activity?
+* What techniques did the Pudding use to put their data into perspective? 
+* How effective is this answering our original question?
 
 ## Typical research workflow
 
@@ -43,3 +52,5 @@ question you're trying to answer!)
 1. Analyze your data! Build charts to answer your original question. Were you wrong?
 That's okay! That means you probably had a counter-intuitive result. What 
 led you to be
+
+🪚 **Exercise: Let's workshop on 2-3 potential research questions together.**

@@ -1,3 +1,11 @@
+---
+layout: default
+title: Data cleaning
+nav_order: 6
+parent: Seminar 1
+permalink: /seminar-1/munge-json
+---
+
 # Data Cleaning
 
 The most important (and least glamorous) part of working with data is creating
@@ -116,17 +124,20 @@ we hear that question?
 
 <details>
     <summary>View some questions that may come to mind.</summary>
-* How will we consider artists that aren't on Twitter?
-* How will I get a financial data for all the artists?
-* Are different genders equally likely to be on Twitter? And what are the gender pay
-    disparities in the music industry?
-* How do we define "active on Twitter"? One tweet a week? A month?
-* We'll have to manually relate artists to their Twitter accounts. How long will
-    that take?
-* How might outliers distort our calculation? The entertainment industry follows
+<ul>
+
+<li>How will we consider artists that aren't on Twitter?</li>
+<li>How will I get a financial data for all the artists?</li>
+<li>Are different genders equally likely to be on Twitter? And what are the gender pay
+    disparities in the music industry?</li>
+<li>How do we define "active on Twitter"? One tweet a week? A month?</li>
+<li>We'll have to manually relate artists to their Twitter accounts. How long will
+    that take?</li>
+<li>How might outliers distort our calculation? The entertainment industry follows
     the power law, meaning a small number of people make a majority of the money.
     If Beyonce, who doesn't tweet as much, commands 10x the money of Cardi B who 
-    tweets a lot, how that one data point skew our numbers?
+    tweets a lot, how that one data point skew our numbers?</li>
+</ul>
 </details>
 
 ## Tips

@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Intro to APIs"
+nav_order: 5
+parent: Seminar 1
+permalink: /seminar-1/apis
+---
+
 # Introduction to working with APIs
 
 An API ("Application Programming Interface", you don't need to remember that, 
@@ -149,7 +157,7 @@ databases:
 * Media
 * Places
 
-Given these databases, what kind of questions could you ask?
+**Given these databases, what kind of questions could you ask?**
 
 ### What is a Twitter ID?
 

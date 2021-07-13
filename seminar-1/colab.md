@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Intro to Colab"
+nav_order: 2
+parent: Seminar 1
+permalink: /seminar-1/colab
+---
+
 # Introduction to Colab
 
 Google Colab is an online platform to write computer code in what's called a 

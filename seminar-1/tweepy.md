@@ -1,3 +1,11 @@
+---
+layout: default
+title: Intro to Tweepy
+nav_order: 4
+parent: Seminar 1
+permalink: /seminar-1/tweepy
+---
+
 # Introduction to Tweepy
 
 Let's log into the Twitter API and execute our first query! 
@@ -71,7 +79,7 @@ we've looked at?
     <summary>Toggle to see some answers:</summary>
     <ul>
         <li>Because we're using tweepy, we can get to the text and timestamp information straight from what tweepy calls a Tweet object. You can't do this with JSON, but tweepy already parsed the most important features and making them easily accessible.</li>
-        <li>We're using python's CSV library instead of Pandas to write the CSV. If you're not analyzing the data and just want to make a CSV, using this library can be useful.</li>
+        <li>We're using python's <a href="https://docs.python.org/3/library/csv.html">csv library</a> instead of Pandas to write the CSV. If you're not analyzing the data and just want to make a CSV, using this library can be useful.</li>
     </ul>
 </details>
 
@@ -81,14 +89,10 @@ we've looked at?
 user = api.get_user('SCREEN_NAME')
 ```
 
-Try assigning the location of NASA to a variable.
+🪐 **Exercise: Try assigning the location of NASA to a variable.**
 
 <details><summary>Toggle to the answer:</summary>
-<pre>
-user = api.get_user('NASA')
-nasa_location = user.location
-nasa_location
-</pre>
+<script src="https://gist.github.com/kmcelwee/d23a027129b0b4f2026afb519a8873c5.js"></script>
 </details>
 
 # Collecting tweets by hashtag
@@ -103,7 +107,6 @@ for tweet in tweet_list:
 
 You can read more about how these search strings can be constructed 
 [here](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query).
-But tweepy isn't very reliable with complex searches.
-
-By default this command will return ten or so tweets, but by setting the `count` parameter, you
+But tweepy isn't very reliable with complex searches. By default this command will return 
+ten or so tweets, but by setting the `count` parameter, you
 can gather more.
