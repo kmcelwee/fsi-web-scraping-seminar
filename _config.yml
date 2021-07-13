@@ -21,16 +21,20 @@
 title: FSI Web Scraping Seminar 
 email: kmcelwee@princeton.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  [WIP] A collection of web scraping resources for the 2021 FSI summer course
+  A collection of web scraping resources for the 2021 FSI summer course
   Humanistic Approaches to Media and Data.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kevinrmcelwee
 github_username:  kmcelwee
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
 theme: just-the-docs
+
+domain: brownanalytics.com       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://www.brownanalytics.com  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /fsi-web-scraping-seminar/      # place folder name if the site is served in a subfolder   
 
 # Exclude from processing.
 # The following items will not be processed, by default.
