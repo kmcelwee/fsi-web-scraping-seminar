@@ -15,7 +15,7 @@ a standardized way of storing data in a table. CSV stands for "Comma Separated
 Value", meaning literally each value in row is separated by a comma. Another 
 popular format is TSV or "Tab Separated Value". It's the same as a CSV, but 
 just separates values by tabs. This is especially useful when there are a lot
-of commas in your data. Here's what a CSV looks like, (Fortune 100 companies 
+of commas in your data. Here's what a CSV looks like (Fortune 100 companies 
 and their Twitter handles):
 
 ```
@@ -33,15 +33,15 @@ That data when loaded into Excel or Google Sheets would look like this:
 | Amazon.com  | https://twitter.com/amazon     | 2    | amazon     | Retailing | 
 | Exxon Mobil | https://twitter.com/exxonmobil | 3    | exxonmobil | Energy    | 
 
-CSVs are important because they are non-priorietary and plain text. Therefore
+CSVs are important because they are non-proprietary and plain text. Therefore
 they can easily be parsed and created by the software programs we write. We'll
-get explain how to parse CSVs when we learn about the 
-[Pandas library next week.](../seminar-2/introduction-to-pandas)
+learn more about working with CSVs when we dig into the
+[Pandas library](https://pandas.pydata.org/) next week.
 
 One drawback of CSVs is that they are limited to one value for each row and each column. 
-If we were trying to add a `Hashtags Used` column, we might get ten or fifteen
+If we were trying to add a `Hashtags` column, we might get ten or fifteen
 values in each row. If, for example, Walmart used the hashtags "#retail", 
-"#IndependenceDay", and "#savings", we could combine with some kind of unique
+"#IndependenceDay", and "#savings" all in one tweet, we could combine with some kind of unique
 character like a semicolon: `retail;IndependenceDay;savings`. Or we could
 use JSON...
 
@@ -78,8 +78,8 @@ with open(json_file_path) as f:
 
 ```
 
-Feel free to copy the following into a Colab notebook and mess around with the `tweet`
-variable. Here are some examples of getting certain values:
+Feel free to copy the following code into a Colab notebook and mess around with the `tweet`
+variable. Here are some examples:
 
 ```python
 import json
@@ -94,7 +94,7 @@ tweet['entities']['user_mentions'][0]['screen_name']
 ```
 
 It can sometimes be difficult to figure out the path to a variable in JSON, so
-some trial and error is predictable.
+some trial and error should be expected.
 
 💡 **Exercise: Can you make a list of the hashtags with the example tweet provided above?** 
 

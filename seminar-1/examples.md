@@ -29,10 +29,10 @@ What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton
 categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)
 
 🏛️ **Questions**
-* What kind of concrete takeaways can you make from Sewell's Twitter activity?
-* What kind of interpretive takeaways can you make from Sewell's Twitter activity?
+* What are some concrete takeaways from Sewell's Twitter activity?
+* What are some interpretive takeaways from Sewell's Twitter activity?
+* How effective would this data be in answering our original question?
 * What techniques did the Pudding use to put their data into perspective? 
-* How effective is this answering our original question?
 
 ## Twitter Scraping Inspiration
 
@@ -51,5 +51,7 @@ categorize them by issue [as The Pudding did.](https://congress.pudding.cool/per
     * [What is Congress tweeting about?](https://congress.pudding.cool/): Topic modeling to monitor what Congress is most
 
 ![](img/blm-fortune-100.png)
+
+## Workshop
 
 🪚 **Exercise: Let's workshop on 2-3 potential research questions together.**

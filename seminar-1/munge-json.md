@@ -13,7 +13,7 @@ a data pipeline. This data pipeline implements a cleaning process where you tran
 the data you find in the wild into a dataset that you can use to answer your
 research question. Data cleaning includes...
 
-* Joinining multiple datasets together.
+* Joining multiple datasets together.
 * Updating values to adhere to a standard. 
     * e.g. survey data may ask for class year and you'll get "2024", "rising sophomore", "senior", etc., 
         and your goal would be to translate them all into four categories: 2022, 2023, 2024, 2025
@@ -21,12 +21,12 @@ research question. Data cleaning includes...
 * Removing unnecessary data.
 * Changing file formats to fit technical requirements.
 
-This is also sometimes called "data munging", and is often the longest
-part of the research process. Usually when drawing data from an API, however, 
+This is also called "data munging", and is often the longest
+part of the research process. When drawing data from an API, however, 
 we can expect data to follow strict guidelines. We'll be focusing on removing 
 unnecessary data and changing Twitter data from the JSON we receive to a CSV
 that we can open in Excel or Google Sheets. Shifting Twitter data from JSON to
-CSV can turn a gigabyte of data into a megabyte of useful data (a 1000-fold) 
+CSV can turn a gigabyte of data into a megabyte of useful data, a 1000-fold 
 difference.
 
 ## Turn JSON into CSV
@@ -58,7 +58,7 @@ df = pd.DataFrame(csv_dict)
 df.to_csv('dog_feelings-tweets.csv', index=False)
 ```
 
-Here is a script that turns the JSON gathered from @dog_feelings tweets and turns it 
+Here is a script that turns the JSON gathered from `@dog_feelings` tweets and turns it 
 into a CSV with the most basic features like `timestamp` and `favorite_count`. A
 good way to build a CSV is to create a list of dictionaries, as shown above. This
 would look something like:
@@ -125,11 +125,12 @@ Twitter.
     <summary><a class="btn btn-green">View examples</a></summary>
 <ul>
 <li>How will we consider artists that aren't on Twitter?</li>
-<li>How will I get a financial data for all the artists?</li>
+<li>What list of musicians should we consider?</li>
+<li>How will I get financial data for all the artists?</li>
 <li>Are different genders equally likely to be on Twitter? And what are the gender pay
     disparities in the music industry?</li>
 <li>How do we define "active on Twitter"? One tweet a week? A month?</li>
-<li>We'll have to manually relate artists to their Twitter accounts. How long will
+<li>We'll have to manually tie artists to their Twitter accounts. How long will
     that take?</li>
 <li>How might outliers distort our calculation? The entertainment industry follows
     the power law, meaning a small number of people make a majority of the money.
@@ -141,7 +142,7 @@ Twitter.
 ## Tips
 
 * Data work is both unfulfilling and time consuming. Have a clear research question
-    in mind before pursuing 
+    in mind before pursuing any kind of data cleaning process.
 * Manually sorting data takes up more time than you think! Always run the calculations
     and weigh whether the research question you want to answer is worth the 
-    time that you will invest.
+    time that you expect to invest.

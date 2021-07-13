@@ -8,23 +8,30 @@ permalink: /seminar-1/tweepy
 
 # Introduction to Tweepy
 
-Let's log into the Twitter API and execute our first query! 
+Let's log into the Twitter API and execute our first query! (Don't worry, I'll
+explain everything about how APIs work next, first let's just get data onto
+our computer.)
 
 ## Twitter Advanced Search
 
 Before using the Twitter API, consider [Twitter Advanced Search](https://twitter.com/search-advanced?lang=en). You can often
-get a lot of answers before writing a line of code! Other forms of site-specific syntax 
-can also be useful
+get a lot of answers before writing a line of code! "Site-specific syntax" is
+not unique to Twitter. Check out useful ways to query [Reddit](https://www.reddit.com/wiki/search/)
+or [Google](https://support.google.com/websearch/answer/2466433?hl=en). Because
+working with APIs can be difficult and time-consuming, especially when first
+starting out, it's best to informally test your hypotheses with these search tools as you form your
+research question.
 
 ## First API Login
 
-First, we need your authentication token. Log in to the developer portal.
+First, we need your API keys. Log in to the developer portal.
 Create a new project under "Projects & Apps". Name your project
 `fsi-seminar` and answer that your purpose is to learn the Twitter API. 
-After filling out the questionaire, you'll be met with the alphanumeric keys
+After filling out the questionnaire, you'll be met with the alphanumeric keys
 generated for you to use the Twitter API. Copy both the "API Key" and the
-"API Secret Key" into a new Colab notebook.
-
+"API Secret Key" into a new Colab notebook. (You won't need to your Authentication
+Token. This is used when you need special privileges, like posting tweets from
+your account.)
 
 ```python
 import tweepy # https://github.com/tweepy/tweepy
@@ -40,10 +47,15 @@ tweet = api.get_status(1412424266763603968)
 tweet.text
 ```
 
-And there you go! You should see the text from a tweet from NASA. What
-do you notice about how the text is formatted?
+And there you go! You should see the text from a tweet from NASA. 
+**What do you notice about how the text is formatted?**
 
 # Scrape a profile
+
+If you need to scrape a profile, you are limited to the latest 3200 tweets.
+If you've set up th API (and placed it into the variable `api`) you can 
+easily run the following code and get the latest 3200 tweets exported to 
+a CSV. 
 
 ```python
 def get_all_tweets(screen_name):
@@ -69,14 +81,14 @@ def get_all_tweets(screen_name):
         writer.writerow(["id","created_at","text"])
         writer.writerows(outtweets)
 
-get_all_tweets('SCREEN_NAME')
+get_all_tweets('SCREEN_NAME')  # Change me
 ```
 
-What do you notice about how this CSV was created differently than other code
-we've looked at?
+**What do you notice about how this CSV was created differently than other code
+we've looked at?**
 
 <details> 
-    <summary>Toggle to see some answers:</summary>
+    <summary><a class="btn btn-purple">View some takeaways</a></summary>
     <ul>
         <li>Because we're using tweepy, we can get to the text and timestamp information straight from what tweepy calls a Tweet object. You can't do this with JSON, but tweepy already parsed the most important features and making them easily accessible.</li>
         <li>We're using python's <a href="https://docs.python.org/3/library/csv.html">csv library</a> instead of Pandas to write the CSV. If you're not analyzing the data and just want to make a CSV, using this library can be useful.</li>
@@ -108,5 +120,4 @@ for tweet in tweet_list:
 You can read more about how these search strings can be constructed 
 [here](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query).
 But tweepy isn't very reliable with complex searches. By default this command will return 
-ten or so tweets, but by setting the `count` parameter, you
-can gather more.
+ten or so tweets, but by setting the `count` parameter, you can gather more.

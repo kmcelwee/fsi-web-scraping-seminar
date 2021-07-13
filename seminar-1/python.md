@@ -6,13 +6,7 @@ parent: Seminar 1
 permalink: /seminar-1/python
 ---
 
-<style>
-
-</style>
-
 # Python programming refresher
-
-
 
 ## Tips on learning how to code 
 
@@ -25,7 +19,7 @@ chance another person has had that exact problem before.
 * The best way to become a coder is to code. Try things out. Mess up.
 * We're starting with python, but programming language really doesn't matter. The 
 most important thing is to get started.
-* Don't expect to understand a topic the first time around. Be kind to yourself, this is a whole new way of thinking.
+* Don't expect to understand anything the first time around. Be kind to yourself, this is a whole new way of thinking.
 * Be persistent. Coding takes time, and the solution is out there. You will figure
 it out if you keep working at it!
 * [Resist imposter syndrome.](https://adainitiative.org/continue-our-work/impostor-syndrome-training/)
