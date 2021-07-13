@@ -6,7 +6,25 @@ parent: Seminar 1
 permalink: /seminar-1/python
 ---
 
+<style>
+details {
+  font: 16px "Open Sans", Calibri, sans-serif;
+}
+
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+</style>
+
 # Python programming refresher
+
+test{:.btn .btn-blue}
 
 ## Tips on learning how to code 
 
