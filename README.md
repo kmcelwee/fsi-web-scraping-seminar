@@ -1,6 +1,6 @@
 # FSI Web Scraping Seminars
 
-## Local installation & development
+**Local installation & development**
 
 ```
 bundle install
