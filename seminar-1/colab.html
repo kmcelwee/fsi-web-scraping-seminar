@@ -1,0 +1,117 @@
+<h1 id="introduction-to-colab">Introduction to Colab</h1>
+
+<p>Google Colab is an online platform to write computer code in what’s called a 
+code “notebook”. Notebooks allow programmers to combine charts, text, and code
+in one place. Typically, programmers write code in files on their computers
+and then run those programs on their own computer, but that requires some setup
+that can make things complicated. Similar to a Google Doc, Colab allows you to
+edit code right in the browser.</p>
+
+<p>To add text to your notebook, you’d be using a language called “markdown”. Markdown is a
+popular syntax used to add formatting to plain text like bolding a word or adding links.
+You don’t need to know too much about markdown, but it’s nice to know the
+basics if you’re interested. (This site was built using just markdown!)</p>
+<ul>
+  <li><a href="https://www.markdownguide.org/getting-started/">Learn more about markdown.</a></li>
+  <li><a href="https://www.markdownguide.org/basic-syntax/">Learn more about markdown syntax.</a></li>
+</ul>
+
+<h2 id="executing-your-first-code-block">Executing your first code block</h2>
+
+<ol>
+  <li>Go to the <a href="https://colab.research.google.com">Colab website</a>, you should be greeted with an 
+introductory notebook. (This intro notebook has some pretty complicated stuff, so don’t get
+too worried about everything that’s written there.)</li>
+  <li>Edit any code block and click the “play” button on the left side. A useful
+shortcut to remember is <kbd>Shift</kbd> + <kbd>Enter</kbd>. This will execute 
+whatever code block you’re currently editing.</li>
+  <li>Create a new notebook. <code class="language-plaintext highlighter-rouge">File &gt; New Notebook</code></li>
+  <li>In the upper left-hand corner, rename the notebook to “first-notebook.ipynb”</li>
+  <li>Copy the following code into a cell, and execute the cell:</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Welcome to Colab!'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="example-notebook">Example notebook</h2>
+
+<p>Let’s say we are interested in the Twitter account <a href="https://twitter.com/dog_feelings/">@dog_feelings</a>,
+and we want to know what day of the week the account tweets most frequently.
+I already have a CSV of the account’s tweets prepared (<a href="https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/dog_feelings-tweets.csv">link</a>).</p>
+
+<p>Create a markdown cell with the heading “Analyze Twitter account 
+<a href="https://twitter.com/dog_feelings/">@dog_feelings</a>”.
+To add a text cell, look for the <code class="language-plaintext highlighter-rouge">+ Text</code> button at the top of your notebook.
+This is what that would look like in markdown:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Analyze Twitter account [@dog_feelings](https://twitter.com/dog_feelings/)</span>
+</code></pre></div></div>
+
+<p>Create a new code block (<code class="language-plaintext highlighter-rouge">+ Code</code> button), copy the following code block,
+ and execute it. By the end of these two seminars, you should understand 
+ what this code does!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Research question: What is the most popular day of week for @dog_feelings to tweet?
+</span>
+<span class="c1"># import a library that helps us parse CSV files
+</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># Read the CSV from the provided link and place into the variable `df` (short for dataframe)
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/dog_feelings-tweets.csv'</span><span class="p">)</span>
+
+<span class="c1"># We want to work with time data, but it takes an extra step to make sure that
+#  the dataframe parsed the timestamp correctly. Here we use the to_datetime
+#  function to turn the `string` into a `datetime` object, a common object in
+#  python that allows us to easily get the day of the week.
+</span><span class="n">df</span><span class="p">[</span><span class="s">'timestamp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'timestamp'</span><span class="p">])</span>
+<span class="c1"># Create a new column `day-of-the-week` using the timestamp column
+</span><span class="n">df</span><span class="p">[</span><span class="s">'day-of-week'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'timestamp'</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">dayofweek</span>
+
+<span class="c1"># Group by day of the week and plot the count as a bar chart, and give a title!
+</span><span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'day-of-week'</span><span class="p">)[</span><span class="s">'id'</span><span class="p">].</span><span class="n">count</span><span class="p">().</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">'Number of tweets tweeted by @dog_feelings by day of week.'</span><span class="p">)</span>
+
+<span class="c1"># Note: 0 is Monday and 6 is Sunday
+</span></code></pre></div></div>
+
+<details> 
+    <summary><a class="btn btn-green">View expected output</a></summary>
+    <img src="https://www.brownanalytics.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="400px" />
+</details>
+
+<p>Again, you don’t understand every component here, but the benefit of Colab is 
+that you can combine your notes, charts, and code all in one place.</p>
+
+<p>📈 <strong>Exercises:</strong></p>
+<ol>
+  <li>Given the chart created by the code above, what is the answer to our research question?</li>
+  <li>What are some questions that come up from this chart? How might it be improved?</li>
+  <li>The header of the CSV is <code class="language-plaintext highlighter-rouge">timestamp,id,text,favorite_count,retweet_count,hashtags</code>. What 
+ other questions could we answer using this data?</li>
+</ol>
+
+<h2 id="other-helpful-hints">Other helpful hints</h2>
+
+<ul>
+  <li>
+    <p>It’s easy to execute cells out of order. When you go back to your notebook it’s
+possible errors might pop up if you execute them one after another. The number
+in brackets to the left of your code is the order of cell execution.
+If you have two code cells and one relies on the other, then you’ll need to 
+execute the first cell before executing the second.</p>
+  </li>
+  <li>By hovering over many of the buttons, you’ll see keyboard shortcuts that are 
+useful to remember and will save you a bit of time. Here are some worth remembering:
+    <ul>
+      <li><kbd>Shift</kbd> + <kbd>Enter</kbd>: Execute the code in this cell</li>
+      <li><kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>B</kbd>: Create a cell below this cell</li>
+      <li><kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>A</kbd>: Create a cell above this cell</li>
+      <li><kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>D</kbd>: Delete this cell</li>
+      <li><kbd>Command / Ctrl</kbd> + <kbd>M</kbd> + <kbd>Z</kbd>: Undo</li>
+    </ul>
+  </li>
+  <li>
+    <p>Don’t forget to turn on <a href="https://twitter.com/GoogleColab/status/1116487177364365313">“Corgi Mode”</a></p>
+  </li>
+  <li>Check out how jupyter notebooks are used in <a href="https://github.com/jkanner/aapt/blob/master/AAPT-WM19-Romano.ipynb">Nobel prize winning scientific research</a></li>
+</ul>
+

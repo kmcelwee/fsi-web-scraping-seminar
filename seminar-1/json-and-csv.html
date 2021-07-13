@@ -1,0 +1,122 @@
+<h1 id="working-with-different-file-formats">Working with different file formats</h1>
+
+<h2 id="what-is-a-csv">What is a CSV?</h2>
+
+<p>If you’ve ever worked with a spreadsheet, you know what a CSV is. A CSV is just
+a standardized way of storing data in a table. CSV stands for “Comma Separated
+Value”, meaning literally each value in row is separated by a comma. Another 
+popular format is TSV or “Tab Separated Value”. It’s the same as a CSV, but 
+just separates values by tabs. This is especially useful when there are a lot
+of commas in your data. Here’s what a CSV looks like, (Fortune 100 companies 
+and their Twitter handles):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Corporation,URL,Rank,Handle,Sector
+Walmart,https://twitter.com/Walmart,1,Walmart,Retailing
+Amazon.com,https://twitter.com/amazon,2,amazon,Retailing
+Exxon Mobil,https://twitter.com/exxonmobil,3,exxonmobil,Energy
+</code></pre></div></div>
+
+<p>That data when loaded into Excel or Google Sheets would look like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Corporation</th>
+      <th>URL</th>
+      <th>Rank</th>
+      <th>Handle</th>
+      <th>Sector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Walmart</td>
+      <td>https://twitter.com/Walmart</td>
+      <td>1</td>
+      <td>Walmart</td>
+      <td>Retailing</td>
+    </tr>
+    <tr>
+      <td>Amazon.com</td>
+      <td>https://twitter.com/amazon</td>
+      <td>2</td>
+      <td>amazon</td>
+      <td>Retailing</td>
+    </tr>
+    <tr>
+      <td>Exxon Mobil</td>
+      <td>https://twitter.com/exxonmobil</td>
+      <td>3</td>
+      <td>exxonmobil</td>
+      <td>Energy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>CSVs are important because they are non-priorietary and plain text. Therefore
+they can easily be parsed and created by the software programs we write. We’ll
+get explain how to parse CSVs when we learn about the 
+<a href="../seminar-2/introduction-to-pandas">Pandas library next week.</a></p>
+
+<p>One drawback of CSVs is that they are limited to one value for each row and each column. 
+If we were trying to add a <code class="language-plaintext highlighter-rouge">Hashtags Used</code> column, we might get ten or fifteen
+values in each row. If, for example, Walmart used the hashtags “#retail”, 
+“#IndependenceDay”, and “#savings”, we could combine with some kind of unique
+character like a semicolon: <code class="language-plaintext highlighter-rouge">retail;IndependenceDay;savings</code>. Or we could
+use JSON…</p>
+
+<h2 id="what-is-json">What is JSON?</h2>
+
+<p>Whenever scraping the web, you will inevitably get a JSON (often pronounced
+like Jason) response. It’s arguably the most popular data format on the web.
+JSON stands for “JavaScript Object Notation”, but you really don’t need to 
+remember this. It’s a combination of nested lists and dictionaries, the same
+kind of lists and dictionaries that you’d use in python.</p>
+
+<details>
+<summary><a class="btn btn-blue">View an example tweet JSON from Twitter</a></summary>
+<script src="https://gist.github.com/kmcelwee/e09c9f03930886b5958fca287e648e36.js"></script>
+</details>
+
+<p>As you can see, there’s <em>a lot</em> of information for just a single tweet, and 
+representing that information in a CSV would be nearly impossible. JSON makes it
+easy to communicate complex datasets in a plain text format.</p>
+
+<h3 id="parsing-json-in-python">Parsing JSON in Python</h3>
+
+<p>Again, JSON is just a combination of dictionaries and lists. To open a JSON
+file and get certain values, you’d treat it as you would any list or dictionary.</p>
+
+<p>You can load a JSON file using Python’s <code class="language-plaintext highlighter-rouge">json</code> library:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">json_file_path</span> <span class="o">=</span> <span class="s">'tweet.json'</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">tweet</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file_path</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Feel free to copy the following into a Colab notebook and mess around with the <code class="language-plaintext highlighter-rouge">tweet</code>
+variable. Here are some examples of getting certain values:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://raw.githubusercontent.com/kmcelwee/fsi-web-scraping-seminar/main/data/tweet.json'</span><span class="p">)</span>
+<span class="n">tweet</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># To get the text of this tweet
+</span><span class="n">tweet</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span>
+<span class="c1"># To get the users mentioned in this tweet
+</span><span class="n">tweet</span><span class="p">[</span><span class="s">'entities'</span><span class="p">][</span><span class="s">'user_mentions'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'screen_name'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>It can sometimes be difficult to figure out the path to a variable in JSON, so
+some trial and error is predictable.</p>
+
+<p>💡 <strong>Exercise: Can you make a list of the hashtags with the example tweet provided above?</strong></p>
+
+<details>
+<summary><a class="btn btn-purple">View Solution</a></summary>
+<script src="https://gist.github.com/kmcelwee/6e8e20b4321bf2fe2e5ce7a7f171e396.js"></script>
+</details>

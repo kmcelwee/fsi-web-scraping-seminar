@@ -1,0 +1,99 @@
+<h1 id="introduction-to-tweepy">Introduction to Tweepy</h1>
+
+<p>Let’s log into the Twitter API and execute our first query!</p>
+
+<h2 id="twitter-advanced-search">Twitter Advanced Search</h2>
+
+<p>Before using the Twitter API, consider <a href="https://twitter.com/search-advanced?lang=en">Twitter Advanced Search</a>. You can often
+get a lot of answers before writing a line of code! Other forms of site-specific syntax 
+can also be useful</p>
+
+<h2 id="first-api-login">First API Login</h2>
+
+<p>First, we need your authentication token. Log in to the developer portal.
+Create a new project under “Projects &amp; Apps”. Name your project
+<code class="language-plaintext highlighter-rouge">fsi-seminar</code> and answer that your purpose is to learn the Twitter API. 
+After filling out the questionaire, you’ll be met with the alphanumeric keys
+generated for you to use the Twitter API. Copy both the “API Key” and the
+“API Secret Key” into a new Colab notebook.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tweepy</span> <span class="c1"># https://github.com/tweepy/tweepy
+</span>
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="s">""</span> <span class="c1"># put your information here!
+</span><span class="n">consumer_secret</span> <span class="o">=</span> <span class="s">""</span> <span class="c1"># put your information here!
+</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="p">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="p">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="c1"># get tweet ID
+</span><span class="n">tweet</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">get_status</span><span class="p">(</span><span class="mi">1412424266763603968</span><span class="p">)</span>
+<span class="n">tweet</span><span class="p">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+<p>And there you go! You should see the text from a tweet from NASA. What
+do you notice about how the text is formatted?</p>
+
+<h1 id="scrape-a-profile">Scrape a profile</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_all_tweets</span><span class="p">(</span><span class="n">screen_name</span><span class="p">):</span>
+    <span class="n">alltweets</span> <span class="o">=</span> <span class="p">[]</span>  
+    <span class="n">new_tweets</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="n">screen_name</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">alltweets</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">new_tweets</span><span class="p">)</span>
+
+    <span class="n">oldest</span> <span class="o">=</span> <span class="n">alltweets</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nb">id</span> <span class="o">-</span> <span class="mi">1</span>
+    
+    <span class="c1"># keep grabbing tweets until there are no tweets left to grab
+</span>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_tweets</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">new_tweets</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="n">screen_name</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">max_id</span><span class="o">=</span><span class="n">oldest</span><span class="p">)</span>
+        <span class="n">alltweets</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">new_tweets</span><span class="p">)</span>
+        <span class="n">oldest</span> <span class="o">=</span> <span class="n">alltweets</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nb">id</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"...</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">alltweets</span><span class="p">)</span><span class="si">}</span><span class="s"> tweets downloaded so far"</span><span class="p">)</span>
+    
+    <span class="c1"># transform the tweepy tweets into a 2D array that will populate the csv 
+</span>    <span class="n">outtweets</span> <span class="o">=</span> <span class="p">[[</span><span class="n">tweet</span><span class="p">.</span><span class="n">id_str</span><span class="p">,</span> <span class="n">tweet</span><span class="p">.</span><span class="n">created_at</span><span class="p">,</span> <span class="n">tweet</span><span class="p">.</span><span class="n">text</span><span class="p">]</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">alltweets</span><span class="p">]</span>
+    
+    <span class="c1"># write the csv  
+</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s">'new_</span><span class="si">{</span><span class="n">screen_name</span><span class="si">}</span><span class="s">_tweets.csv'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">writerow</span><span class="p">([</span><span class="s">"id"</span><span class="p">,</span><span class="s">"created_at"</span><span class="p">,</span><span class="s">"text"</span><span class="p">])</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">outtweets</span><span class="p">)</span>
+
+<span class="n">get_all_tweets</span><span class="p">(</span><span class="s">'SCREEN_NAME'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>What do you notice about how this CSV was created differently than other code
+we’ve looked at?</p>
+
+<details> 
+    <summary>Toggle to see some answers:</summary>
+    <ul>
+        <li>Because we're using tweepy, we can get to the text and timestamp information straight from what tweepy calls a Tweet object. You can't do this with JSON, but tweepy already parsed the most important features and making them easily accessible.</li>
+        <li>We're using python's <a href="https://docs.python.org/3/library/csv.html">csv library</a> instead of Pandas to write the CSV. If you're not analyzing the data and just want to make a CSV, using this library can be useful.</li>
+    </ul>
+</details>
+
+<h1 id="get-profile-information">Get profile information</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">get_user</span><span class="p">(</span><span class="s">'SCREEN_NAME'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>🪐 <strong>Exercise: Get the location of NASA through their Twitter profile.</strong></p>
+
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+<script src="https://gist.github.com/kmcelwee/d23a027129b0b4f2026afb519a8873c5.js"></script>
+</details>
+
+<h1 id="collecting-tweets-by-hashtag">Collecting tweets by hashtag</h1>
+
+<p>Read more about the search parameters <a href="https://docs.tweepy.org/en/v3.5.0/api.html#help-methods">here</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tweet_list</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="s">'#pride'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_list</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tweet</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can read more about how these search strings can be constructed 
+<a href="https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query">here</a>.
+But tweepy isn’t very reliable with complex searches. By default this command will return 
+ten or so tweets, but by setting the <code class="language-plaintext highlighter-rouge">count</code> parameter, you
+can gather more.</p>

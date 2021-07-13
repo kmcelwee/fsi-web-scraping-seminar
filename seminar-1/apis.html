@@ -1,0 +1,190 @@
+<h1 id="introduction-to-working-with-apis">Introduction to working with APIs</h1>
+
+<p>An API (“Application Programming Interface”, you don’t need to remember that, 
+no one does.) is a collection of commands you can issue over the internet to 
+collect data from websites. Collecting this data is usually done over code, 
+but you can also see this data by just visiting URLs in your browser.</p>
+
+<p>This URL <a href="https://api.github.com/users/princeton-cdh/repos">https://api.github.com/users/princeton-cdh/repos</a>
+will list information about all the code under the CDH’s GitHub account.
+(If you’re in Firefox, click on the “Raw Data” button to see things more clearly.)
+This is JSON data like any other, and you could write a quick script to list 
+out all the codebases we’ve worked on.</p>
+
+<p>The power of this is that as long as you follow the formula above:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.github.com/users/{USER}/repos
+</code></pre></div></div>
+<p>you can get the public code bases on <em>any</em> GitHub user. From that information
+we could then get a count of all issues on all the repositories so that we
+know how much work is left to do. GitHub is pretty complicated, but here’s a 
+link to the <a href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api">API documentation</a>.</p>
+
+<p>If we didn’t have an API, to accomplish something similar we’d have to scrape the CDH’s
+<a href="https://github.com/Princeton-CDH">profile page</a>, which would be <em>a lot</em> harder.
+APIs store information in a clean, consistent way that makes it easy to collect
+information (for better and for worse.)</p>
+
+<h2 id="wrappers">Wrappers</h2>
+
+<p>We will be working with <code class="language-plaintext highlighter-rouge">tweepy</code> a library that helps us to work with the API
+in python. This is an example of a <strong>wrapper</strong>. APIs are built to work with any language—
+all you need is an internet connection. But as we’ll see, it can be clumsy to work
+directly with the API, so programmers called API wrappers like <code class="language-plaintext highlighter-rouge">tweepy </code> to 
+make their code cleaner and easier to use.</p>
+
+<p>If you’re ever looking to work with an API, let’s take Reddit as an example,
+it’s worth googling “reddit api python wrapper”, and you’ll come across libraries
+that other people have used to connect to Reddit’s API. For python, I recommend
+<a href="https://github.com/praw-dev/praw"><code class="language-plaintext highlighter-rouge">praw</code></a>.</p>
+
+<p>Wrappers are simply supposed to simply make your life easier, but it’s possible
+that you’re going to work with APIs that don’t have wrappers in the language you
+need. The New York Times API, for example, doesn’t have a good python wrapper.
+If you make one, publish it online, and you can help other programers!</p>
+
+<h2 id="api-limitations">API Limitations</h2>
+
+<p>Rate limits are an important concept in order to work safely with APIs. 
+When companies like Spotify or Twitter open up their servers to connect with
+other computers, they want to impose rules to make sure no one spams their
+servers or scrapes their entire database too quickly. When considering how to
+pursue a research question, keep “rate limiting” and “data limiting” in mind.</p>
+
+<h3 id="rate-limiting">Rate limiting</h3>
+
+<p>Rate limits are kind of like speed limits imposed by an API. If Twitter allowed
+anybody to scrape every single tweet ever, it would place immense strain on their
+infrastructure (and since data is their main commodity, they can sell this access
+to corporations for a hefty price.)</p>
+
+<p>Rate limits <a href="https://developer.twitter.com/en/docs/twitter-api/rate-limits">are documented here.</a>
+We have created one app, so in each 15-minute window we can execute 300 searches.</p>
+
+<p><img src="img/rate-limiting.png" alt="" /></p>
+
+<p>Since each search contains a maximum of 200 tweets, we can get 60,000 tweets (!)
+in 15 minutes. When just starting out, rarely will one’s research questions 
+reach the limit, but if you need a lot of data for your analysis, your scrape
+may take days to execute if the API’s rate limit is especially low. Smaller
+companies probably will have stronger limitations on how
+much data you can collect from their site. In the case of Facebook and TikTok, you can’t
+scrape data at all.</p>
+
+<h3 id="data-limiting">Data Limiting</h3>
+
+<p>As discussed previously, this data is highly valuable, and companies like Facebook
+have decided to cut off developers from accessing that data. Spotify won’t allow
+programmers to access counts of how long a song has been listened to (even
+though it’s available in their UI.) Twitter limits users to only the latest 3200 tweets when scraping a user’s 
+timeline. You can only get the latest 100 retweets on a tweet 
+<a href="https://levels.io/giveaway/">which has led to problems in the past</a>.</p>
+
+<p>When pursuing a research question, make sure that the resources that you need
+to answer that question willl be fully included in the dataset you’re collecting
+<a href="https://towardsdatascience.com/fake-follower-calculators-misinform-users-journalists-with-dubious-statistics-659b60fc4d5a">otherwise you may be misinforming people.</a></p>
+
+<h2 id="secret-keys">Secret Keys</h2>
+
+<p>If someone has your public and private key, they can log in to the API and 
+make it appear like you are abusing the rate limit or even post tweets as you (!).
+Never publish your private key anywhere.</p>
+
+<h2 id="legal">Legal</h2>
+
+<p><strong>I AM NOT A LAWYER, THIS IS NOT LEGAL ADVICE</strong></p>
+
+<p>As long as you’re using the API, you’re not doing anything illegal, but web
+scraping in general (say if I wrote a script to scrape all the email addresses
+from https://www.princeton.edu/) is quasi-illegal. We won’t go into how to scrape
+outside of APIs in these seminars, but consider that making thousands of requests to any
+website can cripple its infrastructure. This is called a 
+<a href="https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos">Denial of Service Attack (DoS).</a>
+So it’s best to follow <a href="https://data-lessons.github.io/library-webscraping-DEPRECATED/05-conclusion/">best practices</a>
+when collecting data outside the formal API process.</p>
+
+<h2 id="ethics">Ethics</h2>
+
+<p>Working with Twitter data most users know that Twitter is a public place, and
+anyone can see their tweets. Even better, working with Reddit, people are 
+operating under the assumption of anonymity, so there are fewer ethical considerations.</p>
+
+<p>But when you send a tweet, you may assume that it’s public, but how much control
+should you have after posting to a platform?</p>
+
+<p>🤔 <strong>How would you feel if a tweet you wrote…</strong></p>
+
+<ul>
+  <li>…was included as an example in a book about internet culture?</li>
+  <li>…was used to train a machine learning model to detect sarcasm?</li>
+  <li>…included a picture that was used to train a facial recognition algorithm?</li>
+</ul>
+
+<p>(All these are real-life examples.)</p>
+
+<p>As you develop your research question, consider the ethical implications of 
+collecting this data. If you scraped a user’s timeline, was this person a 
+public figure? If you scraped all tweets that used a certain hashtag, how
+many people are you collecting data from? Did any of these people expect
+their data to be collected by a first years at Princeton?</p>
+
+<h3 id="popular-apis">Popular APIs</h3>
+
+<ul>
+  <li><a href="https://www.mediawiki.org/wiki/API:Main_page">Wikipedia</a></li>
+  <li><a href="https://www.reddit.com/dev/api">Reddit</a></li>
+  <li><a href="https://developer.spotify.com/documentation/web-api/">Spotify</a></li>
+  <li><a href="https://github.com/public-apis/public-apis">more…</a></li>
+</ul>
+
+<h2 id="the-twitter-api">The Twitter API</h2>
+
+<h3 id="general-structure">General structure</h3>
+
+<p>Twitter is exceptional as a social media company because it gives researchers
+access to almost its entire site. Twitter allows you to access the following 
+databases:</p>
+
+<ul>
+  <li>Tweets</li>
+  <li>Users</li>
+  <li>Direct Messages</li>
+  <li>Lists</li>
+  <li>Trends</li>
+  <li>Media</li>
+  <li>Places</li>
+</ul>
+
+<p>📚 <strong>Given these databases, what kind of questions could you ask?</strong></p>
+
+<h3 id="what-is-a-twitter-id">What is a Twitter ID?</h3>
+
+<p>A Twitter ID is a unique identifier for each tweet. Having a unique ID is 
+important for Twitter to store the thousands of tweets posted every second.
+If you have the ID of a tweet (perhaps from JSON data that you’ve scraped)
+and you want to see the original tweet in your browser, just follow this recipe:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://twitter.com/{PROFILE}/status/{TWEET_ID}
+# Example:
+https://twitter.com/mattxiv/status/1368246126302945284
+</code></pre></div></div>
+
+<p>If you’d like, try to use this tweet ID <code class="language-plaintext highlighter-rouge">1116487177364365313</code> to find the 
+original Tweet. Often, organizations like <a href="https://www.docnow.io/">Documenting the Now</a> 
+will store tweet IDs only, and then researchers can “rehydrate” those IDs.
+Since there’s a limited time window to collect tweets during momentous occasions,
+you’re welcome to contribute to resources like these to preserve how people
+reacted online. <a href="https://catalog.docnow.io/">Check out Documenting the Now’s catalog.</a></p>
+
+<h2 id="existing-datasets">Existing datasets</h2>
+
+<p>Before scraping your own datasets, consider that other people may have had similar
+questions as you. Check out these sites before beginning your work to see if 
+other researchers can save you time!
+People who create datasets want them to be put to good use, so they’ll try to share them as widely as possible.</p>
+
+<ul>
+  <li>Wikipedia has a lot of tabular data you can draw from!</li>
+  <li><a href="https://github.com/">Github</a> is often used for code, but researchers will often post their datasets there as well</li>
+  <li><a href="https://catalog.docnow.io/">Documenting the Now</a>, as mentioned above, has a huge resource of tweets</li>
+  <li><a href="https://www.reddit.com/r/datasets">r/datasets</a> contains a lot of datasets that people compiled for their research or for fun.</li>
+</ul>
