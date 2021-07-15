@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How to develop a research question
-nav_order: 7
+nav_order: 0
 parent: Seminar 1
 permalink: /seminar-1/examples
 ---
@@ -26,7 +26,7 @@ question you're trying to answer!)
 That's okay! That means you probably had a counter-intuitive result. What 
 led you to have a wrong hypothesis?
 
-## Case Study 2: Estimating Congressional Priorities
+## Case Study: Estimating Congressional Priorities
 
 What policy issues does Congresswoman Terri Sewell (D-AL 7th District, Princeton Class of 1986) care about? By scraping her account, we could collect all of her tweets and
 categorize them by issue [as The Pudding did.](https://congress.pudding.cool/person/RepTerriSewell)

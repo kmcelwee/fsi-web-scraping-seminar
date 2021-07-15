@@ -116,7 +116,7 @@ to double check your assumptions about how the data is structured.
 I encountered when working with Twitter data and how I checked for them, but 
 chances are, you won't encounter most of them if you keep to small data sets.
 
-## Case Study 1: MTV Internship
+## Case Study: MTV Internship
 
 You're an intern at MTV and your boss wants to know if
 musicians active on Twitter get paid more money than those who aren't active on
