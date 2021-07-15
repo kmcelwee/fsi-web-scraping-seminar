@@ -11,10 +11,6 @@ permalink: /seminar-1/tweepy
 1. TOC
 {:toc}
 
-Let's log into the Twitter API and execute our first query! (Don't worry, I'll
-explain everything about how APIs work next, first let's just get data onto
-our computer.)
-
 ## Twitter Advanced Search
 
 Before using the Twitter API, consider [Twitter Advanced Search](https://twitter.com/search-advanced?lang=en). You can often
@@ -23,9 +19,13 @@ not unique to Twitter. Check out useful ways to query [Reddit](https://www.reddi
 or [Google](https://support.google.com/websearch/answer/2466433?hl=en). Because
 working with APIs can be difficult and time-consuming, especially when first
 starting out, it's best to informally test your hypotheses with these search tools as you form your
-research question.
+research question. And as we'll discuss soon, this search API is the only way you can get certain data without paying.
 
 ## First API Login
+
+Let's log into the Twitter API and execute our first query! (Don't worry, I'll
+explain everything about how APIs work next. First let's just get data onto
+our computer.)
 
 First, we need your API keys. Log in to the developer portal.
 Create a new project under "Projects & Apps". Name your project
@@ -98,7 +98,7 @@ we've looked at?**
     </ul>
 </details>
 
-# Get profile information
+## Get profile information
 
 ```python
 user = api.get_user('SCREEN_NAME')
@@ -110,17 +110,52 @@ user = api.get_user('SCREEN_NAME')
 <script src="https://gist.github.com/kmcelwee/d23a027129b0b4f2026afb519a8873c5.js"></script>
 </details>
 
-# Collecting tweets by hashtag
+## Collecting tweets by hashtag
 
-Read more about the search parameters [here](https://docs.tweepy.org/en/v3.5.0/api.html#help-methods).
+Twitter's Search API is similar to their advanced search feature, in that 
+they use the same syntax for both. In fact, it's probably best to
+construct your query with their UI, test it there, and then paste it into
+your code once your sure that's what you want.
 
 ```python
-tweet_list = api.search('#pride')
-for tweet in tweet_list:
-    print(tweet.text)
+# Paris's lat: 48.8566, long:2.3522, radius: 6mi
+search_query = '#covid geocode:48.8566,2.3522,6mi min_faves:10'
+
+# Get 10 items. If items() is left blank, it will get as many as possible,
+#  but that command may take a while to execute.
+tweets_cursor = tweepy.Cursor(api.search, q=search_query).items(10)
+tweets = [tweet for tweet in tweets_cursor]
 ```
 
-You can read more about how these search strings can be constructed 
-[here](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query).
-But tweepy isn't very reliable with complex searches. By default this command will return 
-ten or so tweets, but by setting the `count` parameter, you can gather more.
+[See this query in the Twitter UI.](https://twitter.com/search?q=%23covid%20geocode%3A48.8566%2C2.3522%2C6mi%20min_faves%3A10&src=typed_query&f=live){: .btn}
+
+Here I'm plugging in Paris's geocode and a radius and minimum number of favorites
+to 10. Similar to the Advanced Search UI, you can look up by "Latest" or "Popular", 
+and/or filter by language.
+
+If I wanted to collect all tweets to the President that mention climate
+change, the query would look something like:
+
+```python
+search_query = '"climate change" OR "global warming" to:POTUS'
+```
+
+[See this query in the Twitter UI.](https://twitter.com/search?q=%22climate%20change%22%20OR%20%22global%20warming%22%20to%3APOTUS&src=typed_query&f=live){: .btn}
+
+Here I've used the `OR` operator to look for either the phrase `climate change`
+or `global warming` directed to the account `POTUS`.
+
+There are endless examples. The main limitation is the time window. 
+The search API is only valid for the past 7 days on the
+free tier. Twitter is currently updating its API, however, so this may change.
+Further, if you pursue Twitter analysis with a professor or in a more, you can
+apply for academic access, which provides some search functionality for free.
+
+* [Read about tweepy search.](https://docs.tweepy.org/en/v3.5.0/api.html#help-methods)
+* [Read about how these search strings can be constructed.](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query)
+
+🦠 **Exercises:**
+* What could you learn by comparing English tweets in Paris with French tweets in Paris concerning Covid-19?
+* What would those queries look like?
+* Given the limitations we've discussed what wouldn't you be able to determine?
+
