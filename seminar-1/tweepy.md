@@ -84,7 +84,7 @@ def get_all_tweets(screen_name):
         writer.writerow(["id","created_at","text"])
         writer.writerows(outtweets)
 
-get_all_tweets('SCREEN_NAME')  # Change me
+get_all_tweets('USER_NAME')  # Change me
 ```
 
 **What do you notice about how this CSV was created differently than other code
@@ -101,7 +101,7 @@ we've looked at?**
 ## Get profile information
 
 ```python
-user = api.get_user('SCREEN_NAME')
+user = api.get_user('USER_NAME')
 ```
 
 🪐 **Exercise: Get the location of NASA through their Twitter profile.**
@@ -110,7 +110,7 @@ user = api.get_user('SCREEN_NAME')
 <script src="https://gist.github.com/kmcelwee/d23a027129b0b4f2026afb519a8873c5.js"></script>
 </details>
 
-## Collecting tweets by hashtag
+## Using the search API
 
 Twitter's Search API is similar to their advanced search feature, in that 
 they use the same syntax for both. In fact, it's probably best to
