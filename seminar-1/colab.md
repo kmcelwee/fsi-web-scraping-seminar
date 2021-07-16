@@ -11,7 +11,7 @@ permalink: /seminar-1/colab
 1. TOC
 {:toc}
 
-[Google Colab]((https://colab.research.google.com)) is an online platform to write computer code in what's called a 
+[Google Colab](https://colab.research.google.com) is an online platform to write computer code in what's called a 
 code "notebook". Notebooks allow programmers to combine code output (like charts and text) with their notes and code in one place. Typically, programmers write code in files on their computers
 and then run those programs on their own computer, but that requires some setup
 that can make things complicated. Similar to a Google Doc, Colab allows you to
