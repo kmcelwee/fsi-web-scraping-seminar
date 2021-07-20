@@ -163,13 +163,6 @@ df['month'] = df['timestamp'].dt.month
 df['day-of-week'] = df['timestamp'].dt.dayofweek
 ```
 
-...or we can filter by date
-
-```python
-from datetime import datetime
-df['timestamp'] > date()
-```
-
 ## Most common functions
 
 ### [`.shape`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html)
@@ -314,19 +307,36 @@ to learn more in order to answer your research question:
 
 * [Python Pandas Tutorial (Part 8): Grouping and Aggregating - Analyzing and Exploring Your Data](https://www.youtube.com/watch?v=txMdrV1Ut64)
 
+## 🐕 Exercises
 
-## Putting it all together
+If you don’t know how to proceed, try googling the solution. Prepare an answer before clicking the “View Solution” button.
 
+**1. How many tweets are were sent in 2019? What about August 2019?**
 
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
 
-**Exercises**
-* How many tweets are 
+**2. What was the average number of retweets that a tweet would get in 2017? 2018? 2019? ...etc**
 
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
 
+**3. How many tweets contain the word 'gooooob'?**
 
-## Plotting with Pandas
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
 
-### `.plot`
+**4. How many tweets are in all caps?**
 
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
 
+**5. What's the average length of a sentence in these tweets?**
 
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
+
+**6. What's the average ratio of favorites to retweets?**
+
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+</details>
