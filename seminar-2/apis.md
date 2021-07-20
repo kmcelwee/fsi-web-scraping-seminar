@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Intro to APIs"
-nav_order: 5
-parent: Seminar 1
-permalink: /seminar-1/apis
+nav_order: 1
+parent: Seminar 2
+permalink: /seminar-2/apis
 ---
 
 # Introduction to working with APIs

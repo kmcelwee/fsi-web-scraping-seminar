@@ -61,6 +61,8 @@ easily run the following code and get the latest 3200 tweets exported to
 a CSV. 
 
 ```python
+import csv
+
 def get_all_tweets(screen_name):
     alltweets = []  
     new_tweets = api.user_timeline(screen_name = screen_name, count=200)

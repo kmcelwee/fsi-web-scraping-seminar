@@ -33,6 +33,7 @@ introductory books, and answers to [frequently asked programming questions.](htt
 ## Useful Links
 
 * [Twitter Documentation](https://developer.twitter.com/en/docs)
+* [Getting Started with the Twitter API (v2)](https://github.com/twitterdev/getting-started-with-the-twitter-api-v2-for-academic-research)
 * [Tweepy Documentation](https://docs.tweepy.org/en/stable/)
 * [StackOverflow](https://stackoverflow.com/)
 * [Google Colaboratory](https://colab.research.google.com)

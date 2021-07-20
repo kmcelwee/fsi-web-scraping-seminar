@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Data cleaning
-nav_order: 6
-parent: Seminar 1
-permalink: /seminar-1/munge-json
+nav_order: 2
+parent: Seminar 2
+permalink: /seminar-2/munge-json
 ---
 
 # Data Cleaning
