@@ -10,8 +10,5 @@ has_children: true
 
 **July 23, 2021 (1:30-4:20pm)**
 
-Seminar goals:
-
-* Understand basics of manipulating tabular data with Pandas.
-* Draw inspiration from accessible research driven by APIs.
-* Generate basic plots with data collected from the previous.
+By the end of this seminar, I hope that you'll be able to manipulate tabular data using Pandas, generate plots with Pandas and Matplotlib, and learn about
+sentiment analysis.
