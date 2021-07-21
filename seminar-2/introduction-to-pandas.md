@@ -307,6 +307,16 @@ to learn more in order to answer your research question:
 
 * [Python Pandas Tutorial (Part 8): Grouping and Aggregating - Analyzing and Exploring Your Data](https://www.youtube.com/watch?v=txMdrV1Ut64)
 
+## Plotting with Pandas
+
+Thankfully, plotting with Pandas (as long as you're keeping things simple) is
+pretty straightforward. Just add [`.plot()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html) to whatever series you're working with.
+The default is a line chart, but if you want a bar chart, just set `kind='bar'`.
+To set a title, just set `title='My awesome graph'`. Everything else, just google
+"How to change X in a graph with Pandas". Pandas is built on a library called [Matplotlib](https://matplotlib.org/)
+so familiarizing yourself with that library may be helpful, but in general, you
+shouldn't need to do too much outside of just changing that plot function.
+
 ## 🐕 Exercises
 
 If you don’t know how to proceed, try googling the solution. Prepare an answer before clicking the “View Solution” button.
@@ -314,21 +324,25 @@ If you don’t know how to proceed, try googling the solution. Prepare an answer
 **1. How many tweets are were sent in 2019? What about August 2019?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
+    <script src="https://gist.github.com/kmcelwee/834dc9345e7911ac2cb53b7145d70e15.js"></script>
 </details>
 
 **2. What was the average number of retweets that a tweet would get in 2017? 2018? 2019? ...etc**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
+    <script src="https://gist.github.com/kmcelwee/905e52bd77be3d56e7bc7f14d231f57f.js"></script>
 </details>
 
 **3. How many tweets contain the word 'gooooob'?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
+    <script src="https://gist.github.com/kmcelwee/3437ce8553327bf9201624a475c7dff4.js"></script>
 </details>
 
 **4. How many tweets are in all caps?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
+    <script src="https://gist.github.com/kmcelwee/88a0b9c2fec75b8a6b4bcde17e4cba40.js"></script>
 </details>
 
 **5. What's the average length of a sentence in these tweets?**
@@ -339,4 +353,5 @@ If you don’t know how to proceed, try googling the solution. Prepare an answer
 **6. What's the average ratio of favorites to retweets?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
+    <script src="https://gist.github.com/kmcelwee/fa388c21774627a474c92ebf30b7e70e.js"></script>
 </details>
