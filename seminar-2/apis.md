@@ -74,7 +74,7 @@ for a hefty fee.)
 Rate limits [are documented here.](https://developer.twitter.com/en/docs/twitter-api/rate-limits)
 We have created one app, so in each 15-minute window we can execute 300 searches.
 
-![](img/rate-limiting.png)
+![](../seminar-1/img/rate-limiting.png)
 
 Since each search contains a maximum of 200 tweets, we can get 60,000 tweets (!)
 in 15 minutes. When just starting out, rarely will one's research questions 
