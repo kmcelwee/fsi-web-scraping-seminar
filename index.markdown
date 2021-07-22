@@ -7,7 +7,7 @@ permalink: /
 
 # Introduction to Twitter Scraping and Analysis with Python
 
-A collection of web scraping resources for the 2021 FSI summer course [Humanistic Approaches to Media and Data](https://sifp.princeton.edu/humcf).
+A collection of web scraping case studies, exercises, tutorials, and resources for the 2021 FSI summer course [Humanistic Approaches to Media and Data](https://sifp.princeton.edu/humcf).
 
 ## Tools
 
