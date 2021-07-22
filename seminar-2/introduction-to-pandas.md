@@ -11,7 +11,7 @@ permalink: /seminar-2/introduction-to-pandas
 
 # Introduction to Pandas 🐼
 
-If you need to perform any kind of calculation on tabular data, use [Pandas](https://pandas.pydata.org/).
+If you need to perform any kind of calculation with tabular data, use [Pandas](https://pandas.pydata.org/).
 Pandas is a library that helps programmers query, perform calculations on, and
 clean CSVs. If you get nothing else from these seminars, learning Pandas is probably the most
 useful investment of your time. Regardless of what you end up doing, you're 
@@ -24,12 +24,10 @@ thankfully, if you know how to code, it's pretty straightforward to learn!
 
 ## What are data frames and series?
 
-A "data frame" is a word you'll hear a lot, and it's why the most common variable
-used to store a CSV is `df`. It's simply the term used by Pandas (as well as other
-data manipulation software) 
-
-In Pandas vernacular, "series" just means "column". A data frame contains multiple
-series objects.
+A "data frame" is a word you'll hear a lot. It's what Pandas (as well as other
+data manipulation software) calls the table object. It's also why the most common variable
+used to store a CSV is `df`. In Pandas vernacular, "series" just means "column".
+A data frame contains multiple series objects.
 
 ## Read and write a CSV
 
@@ -44,7 +42,7 @@ df = pd.read_csv(url)
 
 After changing your CSV, you may want to save it as a file, for that, just use
 the [`.to_csv()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
-method, where you just provide a `filename` where you 
+method, where you just provide a filename where you 
 want to save your data frame. (Just as a warning though, this will overwrite
 anything with the same name!)
 
@@ -76,6 +74,20 @@ To work with a subset of multiple columns:
 # Select the 'retweet_count' and 'favorite_count' columns
 df[['retweet_count', 'favorite_count']]
 ```
+
+To create a new column, all you need to do is define it.
+For example, if we wanted to add favorites and retweets together for some reason, just
+add them together and set them equal to a new column:
+
+```python
+df['retweets_plus_favorites'] = df['retweet_count'] + df['favorite_count']
+```
+
+There are many ways to apply functions to columns to manipulate them, 
+but with this baseline knowledge, I trust you can Google appropriately.
+If you want to learn more, check out this YouTube lecture:
+
+* [Python Pandas Tutorial (Part 6): Add/Remove Rows and Columns From DataFrames](https://www.youtube.com/watch?v=HQ6XO9eT-fc)
 
 ## Selecting rows
 
@@ -113,22 +125,6 @@ df[df['favorite_count'] > 1300]
 
 This will select only the rows where `df['favorite_count'] > 1300` is True.
 
-## Create a new column
-
-All you need to do to create a new column is define it. For example, if we
-wanted to add favorites and retweets together for some reason, just
-add them together and set them equal to a new column:
-
-```python
-df['retweets_plus_favorites'] = df['retweet_count'] + df['favorite_count']
-```
-
-There are many ways to apply functions to columns to manipulate them, 
-but with this baseline knowledge, I trust you can Google appropriately.
-If you want to learn more, check out this YouTube lecture:
-
-* [Python Pandas Tutorial (Part 6): Add/Remove Rows and Columns From DataFrames](https://www.youtube.com/watch?v=HQ6XO9eT-fc)
-
 ## Working with different datatypes
 
 To see the different datatypes in our `df`, type `df.dtypes`. 
@@ -155,6 +151,8 @@ like so:
 df['timestamp'] = pd.to_datetime(df['timestamp'])
 ```
 
+If you look at `df.dtypes` again, you'll see that the data type of the `timestamp` column 
+is `datetime64[ns, UTC]`.
 Now we can create new columns like "month" or "day-of-week" using the [`.dt`](https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.html)
 accessor.
 
@@ -246,11 +244,11 @@ df['retweet_count'].quantile(.25)
 **Question: Why might you prefer median instead of mean as a way to describe your data?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
-<p>Medians are less sensitive to outliers. Meaning that one large or really small 
+<p>Medians are less sensitive to outliers, meaning that one large or really small 
 numbers won't dramatically change your calculation.</p>
 
 <p>This is most common when talking about incomes. Especially in the US, economists
-will discuss "median household income". This is because the "mean household income"
+will discuss "median household income." This is because the "mean household income"
 is significantly higher because economic inequality. Mean household income
 would be a poor reflection of the actual state of the economy.</p>
 
@@ -260,11 +258,39 @@ to a few billion, not because you are any richer. The median, however, stayed th
 at $45k.</p>
 </details>
 
+### [`.apply()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html)
+
+If you've ever used Excel or Google Sheets, you've probably wanted to take one
+column and apply some kind of function to it. In Pandas, the `.apply()` function
+does that for you. If you have a series, and want to use each of those rows
+to create a new column (and you aren't doing simple arithmetic), then
+just feed a function into this method. This is best explained by example:
+
+```python
+def sentence_count(tweet_text):
+    return len([sentence for sentence in tweet_text.split('.') if sentence != ''])
+
+df['sentence_count'] = df['text'].apply(sentence_count)
+```
+
+Here we apply the new function `sentence_count` to each value in the `df['text']`
+column and assign it to a new column `'sentence_count'`. 
+
+**Question: The `sentence_count` function isn't entirely accurate. Can you think of why that might be?**
+<details><summary><a class="btn btn-purple">View Solution</a></summary>
+<p>Sometimes the tweet separates sentences by newline instead of a period. Sometimes
+the tweet has enumerated points (e.g "1. ...", 2. ...", etc). When making these
+functions, you'll often have to continually test to make sure you are considering
+these "corner cases".</p>
+</details>
+
+
+
 ### [`.str.contains()`](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html)
 
 This method returns true if the strings in your column contain a given substring. 
 This is useful when filtering rows in our dataset. For example, if we wanted to know
-what tweets contain the word "gooooob"
+what tweets contain the word "gooooob":
 
 ```python
 df[df['text'].str.contains('gooooob')]
@@ -312,8 +338,8 @@ to learn more in order to answer your research question:
 Thankfully, plotting with Pandas (as long as you're keeping things simple) is
 pretty straightforward. Just add [`.plot()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html) to whatever series you're working with.
 The default is a line chart, but if you want a bar chart, just set `kind='bar'`.
-To set a title, just set `title='My awesome graph'`. Everything else, just google
-"How to change X in a graph with Pandas". Pandas is built on a library called [Matplotlib](https://matplotlib.org/)
+To set a title, just set `title='My awesome graph'`. For everything else, just google
+"How to change X in a graph with Pandas". Pandas is built on [Matplotlib](https://matplotlib.org/)
 so familiarizing yourself with that library may be helpful, but in general, you
 shouldn't need to do too much outside of just changing that plot function.
 
@@ -321,7 +347,7 @@ shouldn't need to do too much outside of just changing that plot function.
 
 If you don’t know how to proceed, try googling the solution. Prepare an answer before clicking the “View Solution” button.
 
-**1. How many tweets are were sent in 2019? What about August 2019?**
+**1. How many tweets are were sent in 2019?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
     <script src="https://gist.github.com/kmcelwee/834dc9345e7911ac2cb53b7145d70e15.js"></script>
