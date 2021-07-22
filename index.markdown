@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Intro to Twitter Scraping and Analysis with Python
+title: 🐣 Intro to Twitter Scraping and Analysis with Python
 nav_order: 1
 permalink: /
 ---
