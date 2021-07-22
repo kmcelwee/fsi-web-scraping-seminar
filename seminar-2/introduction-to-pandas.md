@@ -371,12 +371,7 @@ If you don’t know how to proceed, try googling the solution. Prepare an answer
     <script src="https://gist.github.com/kmcelwee/88a0b9c2fec75b8a6b4bcde17e4cba40.js"></script>
 </details>
 
-**5. What's the average length of a sentence in these tweets?**
-
-<details><summary><a class="btn btn-purple">View Solution</a></summary>
-</details>
-
-**6. What's the average ratio of favorites to retweets?**
+**5. What's the average ratio of favorites to retweets?**
 
 <details><summary><a class="btn btn-purple">View Solution</a></summary>
     <script src="https://gist.github.com/kmcelwee/fa388c21774627a474c92ebf30b7e70e.js"></script>
