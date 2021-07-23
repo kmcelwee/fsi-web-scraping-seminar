@@ -111,8 +111,7 @@ scraping in general (say if I wrote a script to scrape all the email addresses
 from [https://www.princeton.edu/](https://www.princeton.edu/)) is quasi-illegal. 
 We won't go into how to scrape
 outside of APIs in these seminars, but consider that making thousands of requests to any
-website can cripple its infrastructure. This is called a 
-[Denial of Service Attack (DoS)](https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos) and is super illegal.
+website can cripple its infrastructure. This is called a [Denial of Service Attack (DoS)](https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos) and is super illegal.
 So it's best to follow [best practices](https://data-lessons.github.io/library-webscraping-DEPRECATED/05-conclusion/)
 when collecting data outside the formal API process.
 
