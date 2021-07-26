@@ -49,7 +49,7 @@ categorize them by issue [as The Pudding did.](https://congress.pudding.cool/per
     * [Washington Post Graphics](https://twitter.com/PostGraphics?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
     * [NYT Graphics](https://twitter.com/nytgraphics?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 * Data visualization projects and essays
-    * [The Fortune 100 and Black Lives Matter](https://www.brownanalytics.com/fortune-100-blm-report/site/index.html):
+    * [The Fortune 100 and Black Lives Matter](https://www.kmcelwee.com/fortune-100-blm-report/site/index.html):
         How did Fortune 100 companies react on Twitter to the death of George Floyd and the subsequent protests in the summer of 2020?
     * [What is Congress tweeting about?](https://congress.pudding.cool/): Topic modeling Congressional tweets
 

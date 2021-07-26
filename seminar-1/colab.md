@@ -84,7 +84,7 @@ df.groupby('day-of-week')['id'].count().plot(kind='bar', title='Number of tweets
 
 <details> 
     <summary><a class="btn btn-green">View expected output</a></summary>
-    <img src="https://www.brownanalytics.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="400px">
+    <img src="https://www.kmcelwee.com/fsi-web-scraping-seminar/seminar-1/img/colab-output.png" width="400px">
 </details>
 
 
